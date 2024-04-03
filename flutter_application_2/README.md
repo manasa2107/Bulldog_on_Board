@@ -1,16 +1,10 @@
-# HomeScreen Page
+# Bulldog_on_Board Application
 
-A new Flutter project.
+This app is focused on  helping with the transition to university life and help with a lot of things starting from finding housing to finding a nearby best food places. A unique solution that connects all the resources needed in the first few days of university life in one location purely with the intention of easing the transition.
 
-## Getting Started
+### Main Interfaces we have:
+1. Housing Information
+2. Food Information
+3. Travel information
+4. Other Information
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
