@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -11,21 +10,36 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            "BulldogOnBoard",
-            style: TextStyle(fontSize: 25), // Adjust the font size as needed
+          title: Center(
+            child: Text(
+              "BulldogOnBoard",
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.yellow,
+              ),
+            ),
           ),
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
                 icon: Icon(Icons.menu),
                 iconSize: 25,
+                color: Colors.yellow,
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
               );
             },
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home), // House icon
+              onPressed: () {
+                // Add functionality for the house icon
+              },
+              color: Colors.yellow, // Set color to yellow
+            ),
+          ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
         drawer: Drawer(
@@ -33,20 +47,56 @@ class MyApp extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                child: Text('Drawer Header',
-                    style: TextStyle(color: Colors.yellow)),
+                child: Text('Menu',
+                    style: TextStyle(
+                        color: Colors.yellow,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold)),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(237, 152, 3, 3),
                 ),
               ),
               ListTile(
-                title: Text('Item 1', style: TextStyle(color: Colors.yellow)),
+                title: Text(
+                  'Profile',
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 15, 14, 3),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
                 onTap: () {
                   // Update the layout or handle the click event
                 },
               ),
               ListTile(
-                title: Text('Item 2', style: TextStyle(color: Colors.yellow)),
+                title: Text(
+                  'Settings',
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 19, 18, 13),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  // Update the layout or handle the click event
+                },
+              ),
+
+              ListTile(
+                title: Text('Sign Out',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 19, 18, 13),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
+                onTap: () {
+                  // Update the layout or handle the click event
+                },
+              ),
+              ListTile(
+                title: Text('Option 4',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 19, 18, 13),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold)),
                 onTap: () {
                   // Update the layout or handle the click event
                 },
@@ -96,10 +146,26 @@ class MyApp extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Icon(Icons.home, color: Colors.black),
-              Icon(Icons.fastfood, color: Colors.black),
-              Icon(Icons.directions_car, color: Colors.black),
-              Icon(Icons.info, color: Colors.black),
+              Icon(
+                Icons.apartment,
+                color: Colors.black,
+                size: 40,
+              ),
+              Icon(
+                Icons.fastfood,
+                color: Colors.black,
+                size: 40,
+              ),
+              Icon(
+                Icons.directions_bus,
+                color: Colors.black,
+                size: 40,
+              ),
+              Icon(
+                Icons.info,
+                color: Colors.black,
+                size: 40,
+              ),
             ],
           ),
         ),
