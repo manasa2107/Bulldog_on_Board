@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-       scaffoldBackgroundColor: Colors.orange, 
+       scaffoldBackgroundColor: Colors.yellow, 
       // scaffoldBackgroundColor: Color.fromARGB(220, 242, 164, 46),
       ),
       home: MainScreen(),
@@ -53,14 +53,13 @@ class MainScreen extends StatelessWidget {
               fontSize: 28,
               fontWeight: FontWeight.bold,
               color: Colors.black, 
-              //backgroundColor: Colors.orange, // Text color matches border color
             ),
           ),
         ),
         //title: Text('Bulldog on Board'),
         centerTitle: true,
         elevation: 0, // Remove elevation of AppBar
-        backgroundColor: Color.fromARGB(220, 242, 164, 46),
+        backgroundColor: Colors.yellow,
       ),
       body: ListView(
         children: [
@@ -69,7 +68,7 @@ class MainScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  '/Users/boyapatiyagnamanasa/Desktop/flutter_application_2/lib/assets/BullDog.jpg',
+                  'lib/assets/BullDog.jpg',
                   height: 205,
                   width: 420,
                   fit: BoxFit.cover,
@@ -89,7 +88,7 @@ class MainScreen extends StatelessWidget {
               _buildGridItem(context, 'Housing', Icons.home ),
               _buildGridItem(context, 'Food', Icons.fastfood),
               _buildGridItem(context, 'Travel', Icons.flight),
-              _buildGridItem(context, 'Other', Icons.library_books),
+              _buildGridItem(context, 'Other Information', Icons.info),
             ],
           ),
         ],
@@ -100,7 +99,7 @@ class MainScreen extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(237, 152, 3, 3),
               ),
               child: Text(
                 'Bulldog on Board',
@@ -111,56 +110,29 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Sign Up'),
+              //leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
               onTap: () {
                 // Navigate to signup screen or perform action
               },
             ),
-            ListTile(
-              leading: Icon(Icons.login),
-              title: Text('Login'),
-              onTap: () {
-                // Navigate to login screen or perform action
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.contact_mail),
-              title: Text('Contact Us'),
-              onTap: () {
-                // Navigate to contact us screen or perform action
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
+             ListTile(
+              //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
                 // Navigate to settings screen or perform action
               },
             ),
+            ListTile(
+             // leading: Icon(Icons.login),
+              title: Text('Signout'),
+              onTap: () {
+                // Navigate to login screen or perform action
+              },
+            ),
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_circle, size:32, color:Colors.orange),
-      //       label: 'Sign Up',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.login, size:32, color:Colors.orange),
-      //       label: 'Login',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.contact_mail, size:32, color:Colors.orange),
-      //       label: 'Contact Us',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.settings, size:32, color:Colors.orange),
-      //       label: 'Settings',
-      //     ),
-      //   ],
-      // ),
       bottomNavigationBar: BottomAppBar(
   color: Color.fromARGB(237, 152, 3, 3),
   child: Row(
@@ -169,7 +141,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.account_circle, size: 40, color: Colors.orange),  // Customize size and color here
+          icon: Icon(Icons.account_circle, size: 40, color: Colors.yellow),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
           },
@@ -178,7 +150,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.login, size: 40, color: Colors.orange),  // Customize size and color here
+          icon: Icon(Icons.login, size: 40, color: Colors.yellow),  // Customize size and color here
           onPressed: () {
             // Handle login action
           },
@@ -187,7 +159,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.contact_mail, size: 40, color: Colors.orange),  // Customize size and color here
+          icon: Icon(Icons.contact_mail, size: 40, color: Colors.yellow),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
           },
@@ -196,7 +168,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.settings, size: 40, color: Colors.orange),  // Customize size and color here
+          icon: Icon(Icons.settings, size: 40, color: Colors.yellow),  // Customize size and color here
           onPressed: () {
             // Handle settings action
           },
@@ -205,8 +177,6 @@ class MainScreen extends StatelessWidget {
     ],
   ),
 ),
-
-
     );
   }
 
@@ -224,22 +194,13 @@ class MainScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text(title, style: TextStyle(fontSize: 16)),
           ],
-        // children: [
-        //     if (icon is IconData)
-        //       Icon(icon, size: 50, color: Colors.blue),
-        //     if (icon is String)
-        //       Image.asset(
-        //         icon,
-        //         height: 100,
-        //         width: 100,
-        //         fit: BoxFit.cover,
-        //       ),
-        //     SizedBox(height: 10),
-        //     Text(title, style: TextStyle(fontSize: 16)),
-        //   ],
         ),
       ),
     );
   }
 }
+
+
+
+
 
