@@ -5,6 +5,11 @@ import 'package:webview_flutter/webview_flutter.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
+// import 'main.dart';
+import 'Travel.dart';
+// import 'Travel2.dart';
+// import 'Opage.dart';
+import 'Housing.dart';
 
 
 
@@ -136,7 +141,7 @@ class Opage extends StatelessWidget {
             ],
           ),
         ),
-         bottomNavigationBar: BottomAppBar(
+                 bottomNavigationBar: BottomAppBar(
   color: Color.fromRGBO(255, 235, 59, 1),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -144,36 +149,53 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.account_circle, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Housing()),
+        );
           },
         ),
       ),
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.login, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle login action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Housing()),
+        );
           },
         ),
       ),
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.contact_mail, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Travel()),
+        );
           },
         ),
       ),
+      
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.settings, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle settings action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Opage()),
+        );
           },
         ),
       ),
