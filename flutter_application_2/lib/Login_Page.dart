@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/main.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,10 +20,26 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Icon(
-                Icons.home,
-                color: Colors.yellow, // Change color to yellow
+
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.yellow,
+                ),
+                onPressed: () {
+                  // Navigate to the main page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyApp()), // Replace MainPage with your main page widget
+                  );
+                },
               ),
+              // Icon(
+              //   Icons.home,
+              //   color: Colors.yellow, // Change color to yellow
+                
+              // ),
+              
             ],
           ),
           backgroundColor: Color.fromARGB(255, 148, 19, 10),
