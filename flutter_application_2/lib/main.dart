@@ -3,9 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
+<<<<<<< HEAD
+import 'Food1.dart';
+=======
 import 'Login_Page.dart';
 import 'Food.dart';
 
+>>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
 
 void main() => runApp(const MyApp());
 
@@ -19,8 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-       scaffoldBackgroundColor: const Color.fromRGBO(255, 204, 51, 1.0), 
-      // scaffoldBackgroundColor: Color.fromARGB(220, 242, 164, 46),
+        scaffoldBackgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
+        // scaffoldBackgroundColor: Color.fromARGB(220, 242, 164, 46),
       ),
       home: MainScreen(),
     );
@@ -37,7 +41,7 @@ class MainScreen extends StatelessWidget {
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(Icons.menu),
-             color: Color.fromRGBO(152, 3, 3, 0.929),
+              color: Color.fromRGBO(152, 3, 3, 0.929),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -58,7 +62,7 @@ class MainScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: const Color.fromRGBO(152, 3, 3, 0.922), 
+              color: const Color.fromRGBO(152, 3, 3, 0.922),
             ),
           ),
         ),
@@ -80,8 +84,11 @@ class MainScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 5),
-                Text('Explore the contents within !',  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: const Color.fromRGBO(152, 3, 3, 0.922))),
-                
+                Text('Explore the contents within !',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromRGBO(152, 3, 3, 0.922))),
               ],
             ),
           ),
@@ -92,8 +99,13 @@ class MainScreen extends StatelessWidget {
             childAspectRatio: 0.95,
             physics: NeverScrollableScrollPhysics(),
             children: [
+<<<<<<< HEAD
+              _buildGridItem(context, 'Housing', Icons.home, Housing()),
+              _buildGridItem(context, 'Food', Icons.fastfood, FindGroceries()),
+=======
               _buildGridItem(context, 'Housing', Icons.home, Housing() ),
               _buildGridItem(context, 'Food', Icons.fastfood, Food()),
+>>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
               _buildGridItem(context, 'Travel', Icons.flight, Travel()),
               _buildGridItem(context, 'Other Information', Icons.info, Opage()),
             ],
@@ -123,7 +135,7 @@ class MainScreen extends StatelessWidget {
                 // Navigate to signup screen or perform action
               },
             ),
-             ListTile(
+            ListTile(
               //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
@@ -131,7 +143,7 @@ class MainScreen extends StatelessWidget {
               },
             ),
             ListTile(
-             // leading: Icon(Icons.login),
+              // leading: Icon(Icons.login),
               title: Text('Signout'),
               onTap: () {
                 // Navigate to login screen or perform action
@@ -141,6 +153,65 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+<<<<<<< HEAD
+        color: Color.fromRGBO(152, 3, 3, 0.929),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.account_circle,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 235, 59, 1)), // Customize size and color here
+                onPressed: () {
+                  // Handle sign up action
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.login,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 235, 59, 1)), // Customize size and color here
+                onPressed: () {
+                  // Handle login action
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.contact_mail,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 235, 59, 1)), // Customize size and color here
+                onPressed: () {
+                  // Handle contact us action
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.settings,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 235, 59, 1)), // Customize size and color here
+                onPressed: () {
+                  // Handle settings action
+                },
+              ),
+            ),
+          ],
+=======
   color: Color.fromRGBO(152, 3, 3, 0.929),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -156,38 +227,9 @@ class MainScreen extends StatelessWidget {
           MaterialPageRoute(builder: (context) => Login()),
         );
           },
+>>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
         ),
       ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.login, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
-          onPressed: () {
-            // Handle login action
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.contact_mail, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
-          onPressed: () {
-            // Handle contact us action
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.settings, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
-          onPressed: () {
-            // Handle settings action
-          },
-        ),
-      ),
-    ],
-  ),
-),
 // floatingActionButton: FloatingActionButton(
 //         onPressed: () {
 //           // Navigate to OtherInformationPage when FloatingActionButton is pressed
@@ -201,7 +243,8 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildGridItem(BuildContext context, String title, IconData icon,  Widget page) {
+  Widget _buildGridItem(
+      BuildContext context, String title, IconData icon, Widget page) {
     return GestureDetector(
       onTap: () {
         // Handle item tap
@@ -212,8 +255,8 @@ class MainScreen extends StatelessWidget {
       },
       child: Card(
         elevation: 4,
-         child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 50, color: const Color.fromRGBO(152, 3, 3, 0.922)),
             SizedBox(height: 10),
@@ -224,8 +267,3 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
