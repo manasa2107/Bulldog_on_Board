@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
@@ -103,7 +104,7 @@ class Opage extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -121,13 +122,14 @@ class Opage extends StatelessWidget {
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2, // 2 columns
+                  childAspectRatio: 1.05,
                   children: <Widget>[
-                    GridItem("Health Insurance", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("ISS check in", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("SSN info", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("Finances", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("On campus jobs", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("Scholarships", fontSize: 20, url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
+                    GridItem("Health Insurance", url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
+                    GridItem("ISS check in", url:'https://isss.umn.edu/new-students/requirements/myisss'),
+                    GridItem("SSN info", url:'https://iss.d.umn.edu/employment/social-security-number-ssn'),
+                    GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+                    GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                    GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
                   ],
                 ),
               ),
@@ -185,37 +187,61 @@ class Opage extends StatelessWidget {
 
 class GridItem extends StatelessWidget {
   final String title;
-  final double fontSize;
+  // final double fontSize;
   final String url;
 
-  GridItem(this.title, {required this.fontSize, required this.url});
+  // GridItem(this.title, {required this.fontSize, required this.url});
+  GridItem(this.title, {required this.url});
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () async {
-        if (await canLaunchUrlString(url)) {
-          await launchUrlString(url);
-        } else {
-          throw 'Could not launch $url';
-        }
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
+        );
       },
-      child: Card(
-        elevation: 3,
-        color: Colors.yellow,
-        child: Center(
-          // child: SizedBox(
-          // width: 100, // Adjust the width of the card
-          // height: 10, // Adjust the height of the card
-          child: Text(
-            title,
-            style: TextStyle(
-              color: Colors.black, // Set color to black for all titles
-              fontSize: fontSize, // Set the same font size for all titles
+      child: SizedBox(
+        height: 100, // Adjust the height as needed
+        child: Card(
+          elevation: 3,
+          color: Colors.yellow,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
             ),
           ),
-          // ),
         ),
+      ),
+    );
+  }
+}
+
+class WebViewPage extends StatelessWidget {
+  final String title;
+  final String url;
+
+  WebViewPage({required this.title,required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: WebView(
+        initialUrl: url,
+        javascriptMode: JavascriptMode.unrestricted,
+        
       ),
     );
   }
