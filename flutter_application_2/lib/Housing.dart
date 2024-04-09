@@ -1,11 +1,12 @@
 
 
   import 'package:flutter/material.dart';
+  import 'main.dart';
 
-  void main() => runApp(const MyApp());
+  // void main() => runApp(const MyApp());
 
-  class MyApp extends StatelessWidget {
-    const MyApp({Key? key}) : super(key: key);
+  class Housing extends StatelessWidget {
+    // const MyApp({Key? key}) : super(key: key);
 
     @override
     Widget build(BuildContext context) {
@@ -40,7 +41,7 @@
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Bulldog on Board', style:TextStyle(color:Colors.yellow,),),
+              Text('Bulldog onBoard', style:TextStyle(color:Colors.yellow,),),
               SizedBox(width: 10),
               //Icon(Icons.apartment),
             ],
@@ -48,12 +49,60 @@
           actions: [
             IconButton(
               icon: Icon(Icons.home, color:Colors.yellow),
+              iconSize: 35,
               onPressed: () {
                 // Handle home icon action
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),);
               },
             ),
           ],
         ),
+
+        drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(152, 3, 3, 0.929),
+              ),
+              child: Text(
+                'Bulldog on Board',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              //leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+              onTap: () {
+                // Navigate to signup screen or perform action
+              },
+            ),
+             ListTile(
+              //leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                // Navigate to settings screen or perform action
+              },
+            ),
+            ListTile(
+             // leading: Icon(Icons.login),
+              title: Text('Signout'),
+              onTap: () {
+                // Navigate to login screen or perform action
+              },
+            ),
+          ],
+        ),
+      ),
+
+
+
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -104,37 +153,49 @@
           ],
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Colors.yellow,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                icon: Icon(Icons.apartment, color: Colors.black, size:40),
-                onPressed: () {
-                  // Navigate to Housing screen or perform action
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.fastfood, color: Colors.black, size:40),
-                onPressed: () {
-                  // Navigate to Food screen or perform action
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.directions_bus, color: Colors.black, size:40), // Changed to bus icon
-                onPressed: () {
-                  // Navigate to Travel screen or perform action
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.info, color: Colors.black, size:40),
-                onPressed: () {
-                  // Navigate to Other Information screen or perform action
-                },
-              ),
-            ],
-          ),
+  color: Color.fromRGBO(255, 235, 59, 1),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.account_circle, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle sign up action
+          },
         ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.login, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle login action
+          },
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.contact_mail, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle contact us action
+          },
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.settings, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle settings action
+          },
+        ),
+      ),
+    ],
+  ),
+),
       );
     }
 

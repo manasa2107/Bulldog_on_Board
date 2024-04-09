@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'Opage.dart';
+import 'Housing.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-       scaffoldBackgroundColor: Colors.yellow, 
+       scaffoldBackgroundColor: const Color.fromRGBO(255, 204, 51, 1.0), 
       // scaffoldBackgroundColor: Color.fromARGB(220, 242, 164, 46),
       ),
       home: MainScreen(),
@@ -31,7 +34,7 @@ class MainScreen extends StatelessWidget {
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(Icons.menu),
-             color: Color.fromARGB(237, 152, 3, 3),
+             color: Color.fromRGBO(152, 3, 3, 0.929),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -39,16 +42,16 @@ class MainScreen extends StatelessWidget {
           },
         ),
         title: Container(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(5),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), // Rounded corners
+            borderRadius: BorderRadius.circular(14), // Rounded corners
             border: Border.all(
-              color: Color.fromARGB(237, 152, 3, 3),  // Border color
-              width: 2,            // Border width
+              color: Color.fromRGBO(152, 3, 3, 0.922),  // Border color
+              width: 4,            // Border width
             ),
           ),
           child: Text(
-            'Bulldog on Board',
+            ' Bulldog on Board ',
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -59,7 +62,7 @@ class MainScreen extends StatelessWidget {
         //title: Text('Bulldog on Board'),
         centerTitle: true,
         elevation: 0, // Remove elevation of AppBar
-        backgroundColor: Colors.yellow,
+        backgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
       ),
       body: ListView(
         children: [
@@ -85,10 +88,10 @@ class MainScreen extends StatelessWidget {
             crossAxisCount: 2,
             physics: NeverScrollableScrollPhysics(),
             children: [
-              _buildGridItem(context, 'Housing', Icons.home ),
-              _buildGridItem(context, 'Food', Icons.fastfood),
-              _buildGridItem(context, 'Travel', Icons.flight),
-              _buildGridItem(context, 'Other Information', Icons.info),
+              _buildGridItem(context, 'Housing', Icons.home, Housing() ),
+              _buildGridItem(context, 'Food', Icons.fastfood, Opage()),
+              _buildGridItem(context, 'Travel', Icons.flight, Opage()),
+              _buildGridItem(context, 'Other Information', Icons.info, Opage()),
             ],
           ),
         ],
@@ -99,7 +102,7 @@ class MainScreen extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(237, 152, 3, 3),
+                color: Color.fromRGBO(152, 3, 3, 0.929),
               ),
               child: Text(
                 'Bulldog on Board',
@@ -134,14 +137,14 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-  color: Color.fromARGB(237, 152, 3, 3),
+  color: Color.fromRGBO(152, 3, 3, 0.929),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.account_circle, size: 40, color: Colors.yellow),  // Customize size and color here
+          icon: Icon(Icons.account_circle, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
           },
@@ -150,7 +153,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.login, size: 40, color: Colors.yellow),  // Customize size and color here
+          icon: Icon(Icons.login, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
           onPressed: () {
             // Handle login action
           },
@@ -159,7 +162,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.contact_mail, size: 40, color: Colors.yellow),  // Customize size and color here
+          icon: Icon(Icons.contact_mail, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
           },
@@ -168,7 +171,7 @@ class MainScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.settings, size: 40, color: Colors.yellow),  // Customize size and color here
+          icon: Icon(Icons.settings, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
           onPressed: () {
             // Handle settings action
           },
@@ -177,13 +180,27 @@ class MainScreen extends StatelessWidget {
     ],
   ),
 ),
+// floatingActionButton: FloatingActionButton(
+//         onPressed: () {
+//           // Navigate to OtherInformationPage when FloatingActionButton is pressed
+//           Navigator.push(
+//             context,
+//             MaterialPageRoute(builder: (context) => OtherInformationPage()),
+//           );
+//         },
+//         child: Icon(Icons.info), // Icon for FloatingActionButton
+//       ),
     );
   }
 
-  Widget _buildGridItem(BuildContext context, String title, IconData icon) {
+  Widget _buildGridItem(BuildContext context, String title, IconData icon,  Widget page) {
     return GestureDetector(
       onTap: () {
         // Handle item tap
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
       },
       child: Card(
         elevation: 4,
