@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Opage.dart';
 import 'Housing.dart';
+import 'Travel.dart';
 
 
 void main() => runApp(const MyApp());
@@ -43,19 +44,19 @@ class MainScreen extends StatelessWidget {
         ),
         title: Container(
           padding: EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14), // Rounded corners
-            border: Border.all(
-              color: Color.fromRGBO(152, 3, 3, 0.922),  // Border color
-              width: 4,            // Border width
-            ),
-          ),
+          // decoration: BoxDecoration(
+          //   borderRadius: BorderRadius.circular(14), // Rounded corners
+          //   border: Border.all(
+          //     color: Color.fromRGBO(152, 3, 3, 0.922),  // Border color
+          //     width: 4,            // Border width
+          //   ),
+          // ),
           child: Text(
             ' Bulldog on Board ',
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: Colors.black, 
+              color: const Color.fromRGBO(152, 3, 3, 0.922), 
             ),
           ),
         ),
@@ -66,7 +67,7 @@ class MainScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Center(
             child: Column(
               children: [
@@ -77,7 +78,7 @@ class MainScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 5),
-                Text('Explore the contents within !',  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text('Explore the contents within !',  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: const Color.fromRGBO(152, 3, 3, 0.922))),
                 
               ],
             ),
@@ -86,11 +87,12 @@ class MainScreen extends StatelessWidget {
           GridView.count(
             shrinkWrap: true,
             crossAxisCount: 2,
+            childAspectRatio: 1.1,
             physics: NeverScrollableScrollPhysics(),
             children: [
               _buildGridItem(context, 'Housing', Icons.home, Housing() ),
               _buildGridItem(context, 'Food', Icons.fastfood, Opage()),
-              _buildGridItem(context, 'Travel', Icons.flight, Opage()),
+              _buildGridItem(context, 'Travel', Icons.flight, Travel()),
               _buildGridItem(context, 'Other Information', Icons.info, Opage()),
             ],
           ),
@@ -207,7 +209,7 @@ class MainScreen extends StatelessWidget {
          child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: Colors.blue),
+            Icon(icon, size: 50, color: const Color.fromRGBO(152, 3, 3, 0.922)),
             SizedBox(height: 10),
             Text(title, style: TextStyle(fontSize: 16)),
           ],

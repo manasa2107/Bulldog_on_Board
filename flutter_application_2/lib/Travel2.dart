@@ -8,7 +8,7 @@ import 'main.dart';
 
 
 
-class Opage extends StatelessWidget {
+class InternationalTravelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,13 +16,7 @@ class Opage extends StatelessWidget {
         appBar: AppBar(
           title: Container(
             padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14), // Rounded corners
-            border: Border.all(
-              color: Color.fromRGBO(255, 204, 51, 1.0),  // Border color
-              width: 4,            // Border width
-            ),
-          ),
+            
           child: Text(
             ' Bulldog on Board   ',
             style: TextStyle(
@@ -109,7 +103,7 @@ class Opage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Other Information ",
+                    "Foreign and In-land Travel",
                     style: TextStyle(
                         fontSize: 24,
                         // fontWeight: FontWeight.bold,
@@ -121,18 +115,35 @@ class Opage extends StatelessWidget {
               SizedBox(),
               Expanded(
                 child: GridView.count(
-                  crossAxisCount: 2, // 2 columns
-                  childAspectRatio: 1.03,
+                  crossAxisCount: 1, // 2 columns
+                  childAspectRatio: 1.5,
                   children: <Widget>[
-                    GridItem("Health Insurance", url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("ISS check in", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    GridItem("SSN info", url:'https://iss.d.umn.edu/employment/social-security-number-ssn'),
-                    GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                    GridItem("Essential documentation requirements for both domestic and international travel for F-1 students. It covers necessary documents for re-entry into the U.S. and emphasizes the importance of planning ahead to ensure compliance and smooth travel experiences.", url:'https://iss.d.umn.edu/immigration/travel-info'),
+                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
+                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
+                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
                   ],
                 ),
               ),
+              SizedBox(),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 1, // 2 columns
+                  childAspectRatio: 3.5,
+                  children: <Widget>[
+                    GridItem("More Information...", url:'https://iss.d.umn.edu/immigration/travel-info'),
+                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
+                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
+                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                  ],
+                ),
+              ),
+
+
             ],
           ),
         ),
