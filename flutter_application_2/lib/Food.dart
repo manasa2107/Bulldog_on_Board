@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Food2.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -11,6 +12,7 @@ import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
 import 'Food1.dart';
+import 'Food2.dart';
 
 class Food extends StatelessWidget {
   @override
@@ -108,27 +110,30 @@ class Food extends StatelessWidget {
                   Text(
                     "Food",
                     style: TextStyle(
-                        fontSize: 24,
-                        // fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                        //fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 250, 233, 83)),
                   ),
-                  Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                  SizedBox(width: 5),
+                 Icon(Icons.fastfood, color: Color.fromARGB(255, 250, 233, 77), size: 30),
                 ],
               ),
-              SizedBox(),
+              SizedBox(height: 100),
               Expanded(
                 child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 2.05,
+                  crossAxisCount: 1, // 1 column
+                  childAspectRatio: 2.5,
                   children: <Widget>[
                     GridItem("Where to find Groceries Nearby",
                         url:
                             'https://health-services.d.umn.edu/appointments/health-insurance-information',
                         type: 'DartPage'),
+                       // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
                     GridItem("Best restaurants near me",
                         url:
                             'https://isss.umn.edu/new-students/requirements/myisss',
                         type: 'DartPage'),
+                        // backgroundImage: AssetImage('assets/groceries_image.jpg'),),
                     // GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
                     // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
                     // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
@@ -240,11 +245,11 @@ class GridItem extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => FindGroceries()),
             );
-          } else if (title == "Near by restaurants") {
+          } else if (title == "Best restaurants near me") {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => InternationalTravelPage()),
+                  builder: (context) => Restaurantsnearme()),
             );
           }
         } else if (type == "InAppBrowser") {
