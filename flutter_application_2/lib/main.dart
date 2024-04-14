@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/ContactUs.dart';
+import 'package:flutter_application_2/SignUp.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
-<<<<<<< HEAD
-import 'Food1.dart';
-=======
 import 'Login_Page.dart';
 import 'Food.dart';
-
->>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
 
 void main() => runApp(const MyApp());
 
@@ -99,13 +96,8 @@ class MainScreen extends StatelessWidget {
             childAspectRatio: 0.95,
             physics: NeverScrollableScrollPhysics(),
             children: [
-<<<<<<< HEAD
               _buildGridItem(context, 'Housing', Icons.home, Housing()),
-              _buildGridItem(context, 'Food', Icons.fastfood, FindGroceries()),
-=======
-              _buildGridItem(context, 'Housing', Icons.home, Housing() ),
               _buildGridItem(context, 'Food', Icons.fastfood, Food()),
->>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
               _buildGridItem(context, 'Travel', Icons.flight, Travel()),
               _buildGridItem(context, 'Other Information', Icons.info, Opage()),
             ],
@@ -153,7 +145,6 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-<<<<<<< HEAD
         color: Color.fromRGBO(152, 3, 3, 0.929),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -168,6 +159,10 @@ class MainScreen extends StatelessWidget {
                         255, 235, 59, 1)), // Customize size and color here
                 onPressed: () {
                   // Handle sign up action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUp()),
+                  );
                 },
               ),
             ),
@@ -181,6 +176,10 @@ class MainScreen extends StatelessWidget {
                         255, 235, 59, 1)), // Customize size and color here
                 onPressed: () {
                   // Handle login action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
                 },
               ),
             ),
@@ -194,6 +193,10 @@ class MainScreen extends StatelessWidget {
                         255, 235, 59, 1)), // Customize size and color here
                 onPressed: () {
                   // Handle contact us action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactUs()),
+                  );
                 },
               ),
             ),
@@ -211,23 +214,6 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ],
-=======
-  color: Color.fromRGBO(152, 3, 3, 0.929),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.account_circle, size: 40, color: const Color.fromRGBO(255, 235, 59, 1)),  // Customize size and color here
-          onPressed: () {
-            // Handle sign up action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Login()),
-        );
-          },
->>>>>>> d0c251cbfb84f9c3dcdd2e472d45ee893d95a504
         ),
       ),
 // floatingActionButton: FloatingActionButton(
