@@ -10,8 +10,7 @@ import 'Travel2.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
-
-
+import 'Food1.dart';
 
 class Food extends StatelessWidget {
   @override
@@ -21,15 +20,14 @@ class Food extends StatelessWidget {
         appBar: AppBar(
           title: Container(
             padding: EdgeInsets.all(5),
-            
-          child: Text(
-            ' Bulldog on Board   ',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromRGBO(255, 204, 51, 1.0), 
+            child: Text(
+              ' Bulldog on Board   ',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
+              ),
             ),
-          ),
           ),
           leading: Builder(
             builder: (BuildContext context) {
@@ -50,9 +48,9 @@ class Food extends StatelessWidget {
               onPressed: () {
                 // Add functionality for the house icon
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyApp()),
-        );
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
               },
               color: Colors.yellow, // Set color to yellow
             ),
@@ -60,45 +58,45 @@ class Food extends StatelessWidget {
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
         drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(152, 3, 3, 0.929),
-              ),
-              child: Text(
-                'Bulldog on Board',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(152, 3, 3, 0.929),
+                ),
+                child: Text(
+                  'Bulldog on Board',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              //leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {
-                // Navigate to signup screen or perform action
-              },
-            ),
-             ListTile(
-              //leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Navigate to settings screen or perform action
-              },
-            ),
-            ListTile(
-             // leading: Icon(Icons.login),
-              title: Text('Signout'),
-              onTap: () {
-                // Navigate to login screen or perform action
-              },
-            ),
-          ],
+              ListTile(
+                //leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+                onTap: () {
+                  // Navigate to signup screen or perform action
+                },
+              ),
+              ListTile(
+                //leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigate to settings screen or perform action
+                },
+              ),
+              ListTile(
+                // leading: Icon(Icons.login),
+                title: Text('Signout'),
+                onTap: () {
+                  // Navigate to login screen or perform action
+                },
+              ),
+            ],
+          ),
         ),
-      ),
         body: Container(
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
@@ -123,8 +121,14 @@ class Food extends StatelessWidget {
                   crossAxisCount: 1, // 2 columns
                   childAspectRatio: 2.05,
                   children: <Widget>[
-                    GridItem("Where to find Groceries Nearby", url:'https://health-services.d.umn.edu/appointments/health-insurance-information', type:'DartPage'),
-                    GridItem("Best restaurants near me", url:'https://isss.umn.edu/new-students/requirements/myisss', type:'DartPage'),
+                    GridItem("Where to find Groceries Nearby",
+                        url:
+                            'https://health-services.d.umn.edu/appointments/health-insurance-information',
+                        type: 'DartPage'),
+                    GridItem("Best restaurants near me",
+                        url:
+                            'https://isss.umn.edu/new-students/requirements/myisss',
+                        type: 'DartPage'),
                     // GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
                     // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
                     // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
@@ -135,67 +139,82 @@ class Food extends StatelessWidget {
             ],
           ),
         ),
-                 bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle sign up action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Housing()),
-        );
-          },
+        bottomNavigationBar: BottomAppBar(
+          color: Color.fromRGBO(255, 235, 59, 1),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.home,
+                      size: 45,
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
+                  onPressed: () {
+                    // Handle sign up action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Housing()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.fastfood,
+                      size: 40,
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
+                  onPressed: () {
+                    // Handle login action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Food()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.flight,
+                      size: 40,
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
+                  onPressed: () {
+                    // Handle contact us action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Travel()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.info,
+                      size: 40,
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
+                  onPressed: () {
+                    // Handle settings action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Opage()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle login action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Housing()),
-        );
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle contact us action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Travel()),
-        );
-          },
-        ),
-      ),
-      
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle settings action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Opage()),
-        );
-          },
-        ),
-      ),
-    ],
-  ),
-),
       ),
     );
   }
@@ -210,29 +229,31 @@ class GridItem extends StatelessWidget {
   // GridItem(this.title, {required this.fontSize, required this.url});
   GridItem(this.title, {required this.url, required this.type});
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         if (type == "DartPage") {
           // Navigate to different dart pages based on item type
-          if (title == "Travel in Duluth") {
+          if (title == "Where to find Groceries Nearby") {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TravelInDuluthPage()),
+              MaterialPageRoute(builder: (context) => FindGroceries()),
             );
-          } else if (title == "Foreign and In-land Travel") {
+          } else if (title == "Near by restaurants") {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => InternationalTravelPage()),
+              MaterialPageRoute(
+                  builder: (context) => InternationalTravelPage()),
             );
           }
         } else if (type == "InAppBrowser") {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
-        );}
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => WebViewPage(title: title, url: url)),
+          );
+        }
       },
       child: SizedBox(
         height: 100, // Adjust the height as needed
@@ -262,7 +283,7 @@ class WebViewPage extends StatelessWidget {
   final String title;
   final String url;
 
-  WebViewPage({required this.title,required this.url});
+  WebViewPage({required this.title, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -273,7 +294,6 @@ class WebViewPage extends StatelessWidget {
       body: WebView(
         initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
-        
       ),
     );
   }
