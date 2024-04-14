@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Food.dart';
+import 'package:flutter_application_2/Housing.dart';
+import 'package:flutter_application_2/Opage.dart';
+import 'package:flutter_application_2/Travel.dart';
 import 'package:flutter_application_2/main.dart';
-
-
 
 class Login extends StatelessWidget {
   @override
@@ -30,16 +32,17 @@ class Login extends StatelessWidget {
                   // Navigate to the main page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyApp()), // Replace MainPage with your main page widget
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MyApp()), // Replace MainPage with your main page widget
                   );
                 },
               ),
               // Icon(
               //   Icons.home,
               //   color: Colors.yellow, // Change color to yellow
-                
+
               // ),
-              
             ],
           ),
           backgroundColor: Color.fromARGB(255, 148, 19, 10),
@@ -263,7 +266,11 @@ class Login extends StatelessWidget {
                   color: Color.fromRGBO(15, 10, 10, 1),
                 ),
                 onPressed: () {
-                  // Navigate to food page
+                  // Navigate to housing page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Housing()),
+                  );
                 },
               ),
               IconButton(
@@ -271,6 +278,10 @@ class Login extends StatelessWidget {
                 color: Color.fromRGBO(15, 10, 10, 1),
                 onPressed: () {
                   // Navigate to food page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Food()),
+                  );
                 },
               ),
               IconButton(
@@ -281,6 +292,10 @@ class Login extends StatelessWidget {
                 ),
                 onPressed: () {
                   // Navigate to travel page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Travel()),
+                  );
                 },
               ),
               IconButton(
@@ -288,6 +303,10 @@ class Login extends StatelessWidget {
                 color: Color.fromRGBO(15, 10, 10, 1),
                 onPressed: () {
                   // Navigate to information page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Opage()),
+                  );
                 },
               ),
             ],
