@@ -1,15 +1,11 @@
-
-
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Food.dart';
 import 'package:flutter_application_2/Opage.dart';
 import 'package:flutter_application_2/Travel.dart';
-  import 'main.dart';
+import 'main.dart';
 
-  // void main() => runApp(const MyApp());
 
   class Housing extends StatelessWidget {
-    // const MyApp({Key? key}) : super(key: key);
-
     @override
     Widget build(BuildContext context) {
       return MaterialApp(
@@ -43,67 +39,71 @@ import 'package:flutter_application_2/Travel.dart';
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Bulldog onBoard', style:TextStyle(color:Colors.yellow,),),
+              Text('Bulldog on Board',  style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
+              ),),
               SizedBox(width: 10),
-              //Icon(Icons.apartment),
             ],
           ),
-          actions: [
+ actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.home, color:Colors.yellow),
+              icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Handle home icon action
+                // Add functionality for the house icon
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyApp()),);
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
               },
+              color: Colors.yellow, // Set color to yellow
             ),
           ],
+      //    backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
-
         drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(152, 3, 3, 0.929),
-              ),
-              child: Text(
-                'Bulldog on Board',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(152, 3, 3, 0.929),
+                ),
+                child: Text(
+                  'Bulldog on Board',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              //leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {
-                // Navigate to signup screen or perform action
-              },
-            ),
-             ListTile(
-              //leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Navigate to settings screen or perform action
-              },
-            ),
-            ListTile(
-             // leading: Icon(Icons.login),
-              title: Text('Signout'),
-              onTap: () {
-                // Navigate to login screen or perform action
-              },
-            ),
-          ],
+              ListTile(
+                //leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+                onTap: () {
+                  // Navigate to signup screen or perform action
+                },
+              ),
+              ListTile(
+                //leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigate to settings screen or perform action
+                },
+              ),
+              ListTile(
+                // leading: Icon(Icons.login),
+                title: Text('Signout'),
+                onTap: () {
+                  // Navigate to login screen or perform action
+                },
+              ),
+            ],
+          ),
         ),
-      ),
-
-
+        backgroundColor: Color.fromARGB(255, 148, 19, 10),
 
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +162,7 @@ import 'package:flutter_application_2/Travel.dart';
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -188,7 +188,7 @@ import 'package:flutter_application_2/Travel.dart';
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
