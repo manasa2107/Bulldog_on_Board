@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -113,7 +114,7 @@ class InternationalTravelPage extends StatelessWidget {
                         // fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 250, 233, 83)),
                   ),
-                  Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+        Icon(Icons.directions_bus, color: Color.fromARGB(255, 250, 233, 77), size:30),
                 ],
               ),
               SizedBox(),
@@ -122,7 +123,7 @@ class InternationalTravelPage extends StatelessWidget {
                   crossAxisCount: 1, // 2 columns
                   childAspectRatio: 1.5,
                   children: <Widget>[
-                    GridItem("Essential documentation requirements for both domestic and international travel for F-1 students. It covers necessary documents for re-entry into the U.S. and emphasizes the importance of planning ahead to ensure compliance and smooth travel experiences.", url:'https://iss.d.umn.edu/immigration/travel-info'),
+                    GridItem("Essential documentation requirements for both domestic and international travel for F-1 students. It covers necessary documents for re-entry into the U.S. and emphasizes the importance of planning ahead to ensure compliance and smooth travel experiences.", url:'https://iss.d.umn.edu/immigration/travel-info', icon: null,),
                     //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
                     //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
                     // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
@@ -137,7 +138,7 @@ class InternationalTravelPage extends StatelessWidget {
                   crossAxisCount: 1, // 2 columns
                   childAspectRatio: 3.5,
                   children: <Widget>[
-                    GridItem("More Information...", url:'https://iss.d.umn.edu/immigration/travel-info'),
+                    GridItem("More Information...", url:'https://iss.d.umn.edu/immigration/travel-info',icon: Icon(Icons.flight)),
                     //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
                     //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
                     // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
@@ -159,7 +160,7 @@ class InternationalTravelPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -185,7 +186,7 @@ class InternationalTravelPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
@@ -223,7 +224,7 @@ class GridItem extends StatelessWidget {
   final String url;
 
   // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url});
+  GridItem(this.title, {required this.url,  Icon? icon});
 
 
   @override
