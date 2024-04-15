@@ -157,7 +157,7 @@ class Restaurantsnearme extends StatelessWidget {
                 padding: EdgeInsets.only(
                     left: 10, right: 10), // Adjust left and right margins here
                 child: IconButton(
-                  icon: Icon(Icons.home,
+                  icon: Icon(Icons.apartment,
                       size: 45,
                       color: const Color.fromRGBO(
                           152, 3, 3, 0.929)), // Customize size and color here
@@ -191,7 +191,7 @@ class Restaurantsnearme extends StatelessWidget {
                 padding: EdgeInsets.only(
                     left: 10, right: 10), // Adjust left and right margins here
                 child: IconButton(
-                  icon: Icon(Icons.flight,
+                  icon: Icon(Icons.directions_bus,
                       size: 40,
                       color: const Color.fromRGBO(
                           152, 3, 3, 0.929)), // Customize size and color here
