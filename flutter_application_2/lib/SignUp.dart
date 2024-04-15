@@ -1,119 +1,91 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Food.dart';
 import 'package:flutter_application_2/Housing.dart';
+import 'package:flutter_application_2/Login_Page.dart';
 import 'package:flutter_application_2/Opage.dart';
 import 'package:flutter_application_2/Travel.dart';
 import 'package:flutter_application_2/main.dart';
 
 class SignUp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Text(
-                  "BullDogOnBoard",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.yellow),
-                ),
+          title: Container(
+            padding: EdgeInsets.all(5),
+            child: Text(
+              ' Bulldog on Board   ',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
               ),
-              Spacer(),
-
-              IconButton(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.yellow,
-                ),
-                onPressed: () {
-                  // Navigate to the main page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            MyApp()), // Replace MainPage with your main page widget
-                  );
-                },
-              ),
-              // Icon(
-              //   Icons.home,
-              //   color: Colors.yellow, // Change color to yellow
-
-              // ),
-            ],
+            ),
           ),
-          backgroundColor: Color.fromARGB(255, 148, 19, 10),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: Icon(Icons.menu),
+                iconSize: 30,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home), // House icon
+              iconSize: 35,
+              onPressed: () {
+                // Add functionality for the house icon
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
+              },
+              color: Colors.yellow, // Set color to yellow
+            ),
+          ],
+          backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                child: Text(
-                  'Menu',
-                  style: TextStyle(
-                    fontSize: 40,
-                    // Set font style to italic
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 214, 16, 16),
+                  color: Color.fromRGBO(152, 3, 3, 0.929),
+                ),
+                child: Text(
+                  'Bulldog on Board',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
                 ),
               ),
               ListTile(
-                title: Text(
-                  'Profile',
-                  style: TextStyle(
-                    fontSize: 20,
-                    // Set font style to italic
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                //leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
                 onTap: () {
-                  // Update UI based on drawer item selected
+                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                title: Text(
-                  'Settings',
-                  style: TextStyle(
-                    fontSize: 20,
-                    // Set font style to italic
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                //leading: Icon(Icons.settings),
+                title: Text('Settings'),
                 onTap: () {
-                  // Update UI based on drawer item selected
+                  // Navigate to settings screen or perform action
                 },
               ),
               ListTile(
-                title: Text(
-                  'Sign Out',
-                  style: TextStyle(
-                    fontSize: 20,
-                    // Set font style to italic
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                // leading: Icon(Icons.login),
+                title: Text('Signout'),
                 onTap: () {
-                  // Update UI based on drawer item selected
-                },
-              ),
-              ListTile(
-                title: Text(
-                  'Option 4',
-                  style: TextStyle(
-                    fontSize: 20,
-                    // Set font style to italic
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  // Update UI based on drawer item selected
+                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -213,25 +185,25 @@ class SignUp extends StatelessWidget {
                               fontStyle: FontStyle.italic,
                             ),
                           ),
-                          Text(
-                            "Login",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Color.fromARGB(255, 175, 19, 8),
-                              fontStyle: FontStyle.italic,
-                            ),
-                          ),
-                        ],
-                      ),
-                      // SizedBox(height: 5.0),
-                      // Text(
-                      //   "Forgot password",
-                      //   style: TextStyle(
-                      //     decoration: TextDecoration.underline,
-                      //     color: Color.fromARGB(255, 175, 19, 8),
-                      //     fontStyle: FontStyle.italic,
-                      //   ),
-                      // ),
+                          GestureDetector(
+      onTap: () {
+        // Navigate to Login page when "Login" is clicked
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Login()), 
+        );
+      },
+      child: Text(
+        "Login",
+        style: TextStyle(
+          decoration: TextDecoration.underline,
+          color: Color.fromARGB(255, 175, 19, 8),
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    ),
+  ],
+),
                       SizedBox(height: 20.0),
                       ElevatedButton(
                         onPressed: () {
