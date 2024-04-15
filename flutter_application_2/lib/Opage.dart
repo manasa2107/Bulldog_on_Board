@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Food.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
-// import 'main.dart';
 import 'Travel.dart';
 // import 'Travel2.dart';
 // import 'Opage.dart';
 import 'Housing.dart';
+import 'Food.dart';
 
 
 
@@ -19,23 +20,35 @@ class Opage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          // title: Container(
+          //   padding: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //   borderRadius: BorderRadius.circular(14), // Rounded corners
+          //   border: Border.all(
+          //     color: Color.fromRGBO(255, 204, 51, 1.0),  // Border color
+          //     width: 4,            // Border width
+          //   ),
+          // ),
+          // child: Text(
+          //   ' Bulldog on Board   ',
+          //   style: TextStyle(
+          //     fontSize: 28,
+          //     fontWeight: FontWeight.bold,
+          //     color: const Color.fromRGBO(255, 204, 51, 1.0), 
+          //   ),
+          // ),
+          // ),
+
           title: Container(
             padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14), // Rounded corners
-            border: Border.all(
-              color: Color.fromRGBO(255, 204, 51, 1.0),  // Border color
-              width: 4,            // Border width
+            child: Text(
+              ' Bulldog on Board   ',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
+              ),
             ),
-          ),
-          child: Text(
-            ' Bulldog on Board   ',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromRGBO(255, 204, 51, 1.0), 
-            ),
-          ),
           ),
           leading: Builder(
             builder: (BuildContext context) {
@@ -149,7 +162,7 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -167,7 +180,7 @@ class Opage extends StatelessWidget {
             // Handle login action
             Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Housing()),
+          MaterialPageRoute(builder: (context) => Food()),
         );
           },
         ),
@@ -175,7 +188,7 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
