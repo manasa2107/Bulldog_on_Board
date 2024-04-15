@@ -235,64 +235,67 @@ class Login extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.yellow,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.apartment,
-                  size: 40,
-                  color: Color.fromRGBO(15, 10, 10, 1),
-                ),
-                onPressed: () {
-                  // Navigate to housing page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Housing()),
-                  );
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.fastfood, size: 40),
-                color: Color.fromRGBO(15, 10, 10, 1),
-                onPressed: () {
-                  // Navigate to food page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Food()),
-                  );
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.directions_bus,
-                  size: 40,
-                  color: Color.fromRGBO(15, 10, 10, 1),
-                ),
-                onPressed: () {
-                  // Navigate to travel page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Travel()),
-                  );
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.info, size: 40),
-                color: Color.fromRGBO(15, 10, 10, 1),
-                onPressed: () {
-                  // Navigate to information page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Opage()),
-                  );
-                },
-              ),
-            ],
-          ),
+         bottomNavigationBar: BottomAppBar(
+  color: Color.fromRGBO(255, 235, 59, 1),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle sign up action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Housing()),
+        );
+          },
         ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle login action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Food()),
+        );
+          },
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle contact us action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Travel()),
+        );
+          },
+        ),
+      ),
+      
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          onPressed: () {
+            // Handle settings action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Opage()),
+        );
+          },
+        ),
+      ),
+    ],
+  ),
+),
       ),
     );
   }
