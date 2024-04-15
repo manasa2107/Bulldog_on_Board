@@ -7,12 +7,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'main.dart';
 import 'Travel.dart';
-// import 'Travel2.dart';
-// import 'Opage.dart';
 import 'Housing.dart';
 import 'Food.dart';
-
-
 
 class Opage extends StatelessWidget {
   @override
@@ -20,25 +16,6 @@ class Opage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          // title: Container(
-          //   padding: EdgeInsets.all(5),
-          //   decoration: BoxDecoration(
-          //   borderRadius: BorderRadius.circular(14), // Rounded corners
-          //   border: Border.all(
-          //     color: Color.fromRGBO(255, 204, 51, 1.0),  // Border color
-          //     width: 4,            // Border width
-          //   ),
-          // ),
-          // child: Text(
-          //   ' Bulldog on Board   ',
-          //   style: TextStyle(
-          //     fontSize: 28,
-          //     fontWeight: FontWeight.bold,
-          //     color: const Color.fromRGBO(255, 204, 51, 1.0), 
-          //   ),
-          // ),
-          // ),
-
           title: Container(
             padding: EdgeInsets.all(5),
             child: Text(
@@ -122,7 +99,7 @@ class Opage extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -130,27 +107,34 @@ class Opage extends StatelessWidget {
                     "Other Information ",
                     style: TextStyle(
                         fontSize: 24,
-                        // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                         fontWeight: FontWeight.bold,
+                       // color: Color.fromARGB(255, 250, 233, 83)),
+                       color:Colors.white),
                   ),
-                  Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                 // Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                     Icon(Icons.info, color: Colors.white, size:27),
                 ],
               ),
-              SizedBox(),
+              SizedBox(height:50),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2, // 2 columns
-                  childAspectRatio: 1.03,
-                  children: <Widget>[
-                    GridItem("Health Insurance", url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
-                    GridItem("ISS check in", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    GridItem("SSN info", url:'https://iss.d.umn.edu/employment/social-security-number-ssn'),
-                    GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
-                ),
-              ),
+  child: Padding(
+    padding: EdgeInsets.all(10.0), // Adjust the padding as needed
+    child: GridView.count(
+      crossAxisCount: 2, // 2 columns
+      childAspectRatio: 2,
+      mainAxisSpacing: 30.0, // Add vertical spacing between grid items
+      crossAxisSpacing: 20.0, // Add horizontal spacing between grid items
+      children: <Widget>[
+        GridItem("Health Insurance", url:'https://health-services.d.umn.edu/appointments/health-insurance-information'),
+        GridItem("ISS check in", url:'https://isss.umn.edu/new-students/requirements/myisss'),
+        GridItem("SSN info", url:'https://iss.d.umn.edu/employment/social-security-number-ssn'),
+        GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+        GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+        GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+      ],
+    ),
+  ),
+),
             ],
           ),
         ),
@@ -162,7 +146,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+        icon: Icon(Icons.apartment, size: 40, color:Colors.black), 
+       //   icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -175,7 +160,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          // icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.fastfood, size: 40, color:Colors.black), 
           onPressed: () {
             // Handle login action
             Navigator.push(
@@ -188,7 +174,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          // icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+           icon: Icon(Icons.directions_bus, size: 40, color:Colors.black), 
           onPressed: () {
             // Handle contact us action
             Navigator.push(
@@ -202,7 +189,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+      icon: Icon(Icons.info, size: 40, color:Colors.black), 
+         // icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle settings action
             Navigator.push(
@@ -242,14 +230,19 @@ class GridItem extends StatelessWidget {
         height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
+           color: Colors.white,
+         // color: Colors.yellow,
+
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                 // color: const Color.fromRGBO(152, 3, 3, 0.929),
+                 color:Colors.black,
+
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
