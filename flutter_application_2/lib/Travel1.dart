@@ -111,7 +111,7 @@ class TravelInDuluthPage extends StatelessWidget {
                         // fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 250, 233, 83)),
                   ),
-                  Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                 Icon(Icons.directions_bus, color: Color.fromARGB(255, 250, 233, 77), size:30),
                 ],
               ),
               SizedBox(),
@@ -157,7 +157,7 @@ class TravelInDuluthPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.home, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -183,7 +183,7 @@ class TravelInDuluthPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.flight, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
