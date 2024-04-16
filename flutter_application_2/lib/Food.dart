@@ -103,37 +103,43 @@ class Food extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 60),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     "Food",
                     style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                         //fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                        color: Color.fromARGB(255, 247, 246, 244)),
                   ),
                   SizedBox(width: 5),
-                 Icon(Icons.fastfood, color: Color.fromARGB(255, 250, 233, 77), size: 30),
+                  Icon(Icons.fastfood,
+                      color: Color.fromARGB(255, 241, 241, 239), size: 30),
                 ],
               ),
-              SizedBox(height: 100),
+              SizedBox(height: 60),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 1, // 1 column
+                  padding: EdgeInsets.all(5.0),
                   childAspectRatio: 2.5,
+                  mainAxisSpacing:
+                      40.0, // Add vertical spacing between grid items
+                  //crossAxisSpacing: 20.0,
                   children: <Widget>[
                     GridItem("Where to find Groceries Nearby",
                         url:
                             'https://health-services.d.umn.edu/appointments/health-insurance-information',
                         type: 'DartPage'),
-                       // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
+                    // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
                     GridItem("Best restaurants near me",
                         url:
                             'https://isss.umn.edu/new-students/requirements/myisss',
                         type: 'DartPage'),
-                        // backgroundImage: AssetImage('assets/groceries_image.jpg'),),
+                    // backgroundImage: AssetImage('assets/groceries_image.jpg'),),
                     // GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
                     // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
                     // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
@@ -248,8 +254,7 @@ class GridItem extends StatelessWidget {
           } else if (title == "Best restaurants near me") {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => Restaurantsnearme()),
+              MaterialPageRoute(builder: (context) => Restaurantsnearme()),
             );
           }
         } else if (type == "InAppBrowser") {
@@ -264,7 +269,7 @@ class GridItem extends StatelessWidget {
         height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
+          color: const Color.fromARGB(255, 243, 243, 240),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -272,7 +277,7 @@ class GridItem extends StatelessWidget {
                 title,
                 style: TextStyle(
                   color: const Color.fromRGBO(152, 3, 3, 0.929),
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
