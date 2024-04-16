@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_2/Food.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -11,6 +12,8 @@ import 'Travel2.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 
+
+
 class Travel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,14 +22,15 @@ class Travel extends StatelessWidget {
         appBar: AppBar(
           title: Container(
             padding: EdgeInsets.all(5),
-            child: Text(
-              ' Bulldog on Board   ',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromRGBO(255, 204, 51, 1.0),
-              ),
+            
+          child: Text(
+            ' Bulldog on Board   ',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: const Color.fromRGBO(255, 204, 51, 1.0), 
             ),
+          ),
           ),
           leading: Builder(
             builder: (BuildContext context) {
@@ -47,56 +51,55 @@ class Travel extends StatelessWidget {
               onPressed: () {
                 // Add functionality for the house icon
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
-                );
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),
+        );
               },
-              color: const Color.fromRGBO(
-                  255, 204, 51, 1.0), // Set color to yellow
+              color: const Color.fromRGBO(255, 204, 51, 1.0), // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(152, 3, 3, 0.929),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(152, 3, 3, 0.929),
+              ),
+              child: Text(
+                'Bulldog on Board',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
                 ),
-                child: Text(
-                  'Bulldog on Board',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
               ),
-              ListTile(
-                //leading: Icon(Icons.account_circle),
-                title: Text('Profile'),
-                onTap: () {
-                  // Navigate to signup screen or perform action
-                },
-              ),
-              ListTile(
-                //leading: Icon(Icons.settings),
-                title: Text('Settings'),
-                onTap: () {
-                  // Navigate to settings screen or perform action
-                },
-              ),
-              ListTile(
-                // leading: Icon(Icons.login),
-                title: Text('Signout'),
-                onTap: () {
-                  // Navigate to login screen or perform action
-                },
-              ),
-            ],
-          ),
+            ),
+            ListTile(
+              //leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+              onTap: () {
+                // Navigate to signup screen or perform action
+              },
+            ),
+             ListTile(
+              //leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                // Navigate to settings screen or perform action
+              },
+            ),
+            ListTile(
+             // leading: Icon(Icons.login),
+              title: Text('Signout'),
+              onTap: () {
+                // Navigate to login screen or perform action
+              },
+            ),
+          ],
         ),
+      ),
         body: Container(
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
@@ -112,121 +115,94 @@ class Travel extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  Icon(Icons.directions_bus, color: Colors.white, size: 30),
+                  Icon(Icons.directions_bus, color:Colors.white, size:30),
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
+              SizedBox(height:30),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: GridView.count(
-                    crossAxisCount: 1, // 2 columns
-                    childAspectRatio: 2.5,
-                    mainAxisSpacing:
-                        20.0, // Add vertical spacing between grid items
-                    crossAxisSpacing: 10.0,
-                    children: <Widget>[
-                      GridItem("Travel in Duluth",
-                          url:
-                              'https://health-services.d.umn.edu/appointments/health-insurance-information',
-                          type: 'DartPage',
-                          image: 'lib/assets/TravelDuluth.jpg'),
-                      GridItem(
-                          "Foreign and                             In-land Travel",
-                          url:
-                              'https://isss.umn.edu/new-students/requirements/myisss',
-                          type: 'DartPage',
-                          image: 'lib/assets/TravelOut.jpg'),
-                      GridItem("Campus Map",
-                          url: 'https://maps.umn.edu/Duluth_Campusmap/',
-                          type: 'InAppBrowser',
-                          image: 'lib/assets/Campusmap.jpg'),
-                    ],
-                  ),
+    padding: EdgeInsets.all(10.0), 
+                child: GridView.count(
+                  crossAxisCount: 1, // 2 columns
+                  childAspectRatio: 2.5,
+      mainAxisSpacing: 20.0, // Add vertical spacing between grid items
+      crossAxisSpacing: 10.0, 
+                  children: <Widget>[
+                    GridItem("Travel in Duluth", url:'https://health-services.d.umn.edu/appointments/health-insurance-information', type:'DartPage', image:'lib/assets/TravelDuluth.jpg'),
+                    GridItem("Foreign and In-land Travel", url:'https://isss.umn.edu/new-students/requirements/myisss', type:'DartPage', image:'lib/assets/TravelOut.jpg'),
+                    GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser',image: 'lib/assets/Campusmap.jpg'),
+                  ],
+                ),
                 ),
               ),
             ],
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Color.fromRGBO(255, 204, 51, 1.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 10, right: 10), // Adjust left and right margins here
-                child: IconButton(
-                  icon: Icon(Icons.apartment,
-                      size: 45,
-                      color: Colors.black), // Customize size and color here
-                  onPressed: () {
-                    // Handle sign up action
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Housing()),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 10, right: 10), // Adjust left and right margins here
-                child: IconButton(
-                  icon: Icon(Icons.fastfood,
-                      size: 45,
-                      color: Colors.black), // Customize size and color here
-                  onPressed: () {
-                    // Handle login action
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Food()),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 10, right: 10), // Adjust left and right margins here
-                child: IconButton(
-                  icon: Icon(Icons.directions_bus,
-                      size: 45,
-                      color: Colors.black), // Customize size and color here
-                  onPressed: () {
-                    // Handle contact us action
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Travel()),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 10, right: 10), // Adjust left and right margins here
-                child: IconButton(
-                  icon: Icon(Icons.info,
-                      size: 45,
-                      color: Colors.black), // Customize size and color here
-                  onPressed: () {
-                    // Handle settings action
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Opage()),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
+                 bottomNavigationBar: BottomAppBar(
+  color: Color.fromRGBO(255, 204, 51, 1.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.apartment, size: 45, color: Colors.black),  // Customize size and color here
+          onPressed: () {
+            // Handle sign up action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Housing()),
+        );
+          },
         ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.fastfood, size: 45, color: Colors.black),  // Customize size and color here
+          onPressed: () {
+            // Handle login action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Food()),
+        );
+          },
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),  // Customize size and color here
+          onPressed: () {
+            // Handle contact us action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Travel()),
+        );
+          },
+        ),
+      ),
+      
+      Padding(
+        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
+        child: IconButton(
+          icon: Icon(Icons.info, size: 45, color: Colors.black),  // Customize size and color here
+          onPressed: () {
+            // Handle settings action
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Opage()),
+        );
+          },
+        ),
+      ),
+    ],
+  ),
+),
       ),
     );
   }
 }
-
 class GridItem extends StatelessWidget {
   final String title;
   final String url;
@@ -249,27 +225,24 @@ class GridItem extends StatelessWidget {
           } else if (title == "Foreign and In-land Travel") {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => InternationalTravelPage()),
+              MaterialPageRoute(builder: (context) => InternationalTravelPage()),
             );
           }
         } else if (type == "InAppBrowser") {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => WebViewPage(title: title, url: url)),
+            MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
           );
         }
       },
       child: SizedBox(
-        // height: 100,
+       // height: 100,
         child: Card(
           elevation: 10,
           color: Colors.white,
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                  10), // Adjust the border radius as needed
+              borderRadius: BorderRadius.circular(10), // Adjust the border radius as needed
               image: image != null
                   ? DecorationImage(
                       image: AssetImage(image!),
@@ -288,8 +261,8 @@ class GridItem extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    // color: title == "Campus Map" ? Colors.white : Colors.black, // Change text color based on title
-                    color: const Color.fromRGBO(255, 204, 51, 1.0),
+                   // color: title == "Campus Map" ? Colors.white : Colors.black, // Change text color based on title
+                   color:const Color.fromRGBO(255, 204, 51, 1.0),
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
@@ -307,7 +280,7 @@ class WebViewPage extends StatelessWidget {
   final String title;
   final String url;
 
-  WebViewPage({required this.title, required this.url});
+  WebViewPage({required this.title,required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -318,6 +291,7 @@ class WebViewPage extends StatelessWidget {
       body: WebView(
         initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
+        
       ),
     );
   }
