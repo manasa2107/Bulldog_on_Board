@@ -110,7 +110,7 @@ class ContactUs extends StatelessWidget {
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         // color: Color.fromARGB(255, 250, 233, 83)),
-                        color:Colors.white),
+                        color: Colors.white),
                   ),
                   //Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                 ],
@@ -130,8 +130,7 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Stanley",
-                              url: 'https://www.duluthtransit.com/'),
+                          child: GridItem("Stanley"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
                         Icon(Icons.email, size: 30),
@@ -149,9 +148,7 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Manasa",
-                              url:
-                                  'https://www.lyft.com/rider/cities/duluth-mn'),
+                          child: GridItem("Manasa"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
                         Icon(Icons.email, size: 30),
@@ -169,9 +166,7 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Harika.Y",
-                              url:
-                                  'https://www.lyft.com/rider/cities/duluth-mn'),
+                          child: GridItem("Harika.Y"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
                         Icon(Icons.email, size: 30),
@@ -273,21 +268,14 @@ class ContactUs extends StatelessWidget {
 class GridItem extends StatelessWidget {
   final String title;
   // final double fontSize;
-  final String url;
+  //final String url;
 
   // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url});
+  GridItem(this.title);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => WebViewPage(title: title, url: url)),
-        );
-      },
       child: SizedBox(
         height: 100, // Adjust the height as needed
         child: Card(
