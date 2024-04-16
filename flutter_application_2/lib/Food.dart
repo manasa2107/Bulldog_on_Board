@@ -122,29 +122,34 @@ class Food extends StatelessWidget {
               ),
               SizedBox(height: 60),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 1 column
-                  padding: EdgeInsets.all(5.0),
-                  childAspectRatio: 2.5,
-                  mainAxisSpacing:
-                      40.0, // Add vertical spacing between grid items
-                  //crossAxisSpacing: 20.0,
-                  children: <Widget>[
-                    GridItem("Where to find Groceries Nearby",
-                        url:
-                            'https://health-services.d.umn.edu/appointments/health-insurance-information',
-                        type: 'DartPage'),
-                    // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
-                    GridItem("Best restaurants near me",
-                        url:
-                            'https://isss.umn.edu/new-students/requirements/myisss',
-                        type: 'DartPage'),
-                    // backgroundImage: AssetImage('assets/groceries_image.jpg'),),
-                    // GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
+                child: Center(
+                  child: Container(
+                    width: 370,
+                    child: GridView.count(
+                      crossAxisCount: 1, // 1 column
+                      padding: EdgeInsets.all(5.0),
+                      childAspectRatio: 2.5,
+                      mainAxisSpacing:
+                          40.0, // Add vertical spacing between grid items
+                      //crossAxisSpacing: 20.0,
+                      children: <Widget>[
+                        GridItem("Where to find Groceries Nearby",
+                            url:
+                                'https://health-services.d.umn.edu/appointments/health-insurance-information',
+                            type: 'DartPage'),
+                        // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
+                        GridItem("Best restaurants near me",
+                            url:
+                                'https://isss.umn.edu/new-students/requirements/myisss',
+                            type: 'DartPage'),
+                        // backgroundImage: AssetImage('assets/groceries_image.jpg'),),
+                        // GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
+                        // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+                        // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                        // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -161,8 +166,8 @@ class Food extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.apartment,
                       size: 45,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle sign up action
                     Navigator.push(
@@ -178,8 +183,8 @@ class Food extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle login action
                     Navigator.push(
@@ -195,8 +200,8 @@ class Food extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle contact us action
                     Navigator.push(
@@ -212,8 +217,8 @@ class Food extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.info,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle settings action
                     Navigator.push(
@@ -275,8 +280,9 @@ class GridItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                  color: Color.fromARGB(255, 22, 22, 22),
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
