@@ -68,6 +68,11 @@ flutter:
   assets:
     - lib/assets/BullDog.jpg
     - lib/assets/Housing.jpg
+    - lib/assets/groceries.png
+    - lib/assets/Campusmap.jpg
+    - lib/assets/TravelDuluth.jpg
+    - lib/assets/TravelOut.jpg
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
