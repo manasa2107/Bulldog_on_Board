@@ -99,7 +99,7 @@ class FindGroceries extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 15),
+              SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -107,6 +107,7 @@ class FindGroceries extends StatelessWidget {
                     "Where to find Groceries",
                     style: TextStyle(
                         fontSize: 24,
+                        fontWeight: FontWeight.bold,
                         // fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 241, 241, 238)),
                   ),
@@ -117,46 +118,55 @@ class FindGroceries extends StatelessWidget {
                 height: 50,
               ),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 1.5,
-                  children: <Widget>[
-                    GridItem(
-                        "These grocery shopping sites in Duluth streamline shopping with efficient online ordering and convenient pickup or delivery options.",
-                        url: 'https://iss.d.umn.edu/immigration/travel-info',
-                        type: 'No redirection'),
-                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: GridView.count(
+                    crossAxisCount: 1, // 2 columns
+                    childAspectRatio: 2,
+                    children: <Widget>[
+                      GridItem(
+                          "These grocery shopping sites in Duluth streamline shopping with efficient online ordering and convenient pickup or delivery options.",
+                          url: 'https://iss.d.umn.edu/immigration/travel-info',
+                          type: 'No redirection'),
+                      //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
+                      //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
+                      // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
+                      // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                      // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2, // 2 columns
-                  childAspectRatio: 2,
-                  children: <Widget>[
-                    GridItem("SuperOne",
-                        url:
-                            'https://www.superonefoods.com/store-details/duluth-kenwood-super-one-foods',
-                        type: 'redirection'),
-                    GridItem("CostCo",
-                        url:
-                            'https://www.costco.com/warehouse-locations/duluth-mn-1422.html',
-                        type: 'redirection'),
-                    GridItem("Walmart",
-                        url: 'https://www.walmart.com/store/1757-hermantown-mn',
-                        type: 'redirection'),
-                    GridItem("Cub Foods",
-                        url:
-                            'https://www.cub.com/sm/pickup/rsid/1612?gad_source=1&gclid=CjwKCAjw5ImwBhBtEiwAFHDZx_QuvhTJKJBCgwh-vU9_w-gy59dpI88d1AwIdAoZyVnOA122s6oJUBoCvngQAvD_BwE',
-                        type: 'redirection'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: GridView.count(
+                    crossAxisCount: 2, // 2 columns
+                    childAspectRatio: 2,
+                    mainAxisSpacing: 20.0,
+                    crossAxisSpacing: 15,
+                    children: <Widget>[
+                      GridItem("SuperOne",
+                          url:
+                              'https://www.superonefoods.com/store-details/duluth-kenwood-super-one-foods',
+                          type: 'redirection'),
+                      GridItem("CostCo",
+                          url:
+                              'https://www.costco.com/warehouse-locations/duluth-mn-1422.html',
+                          type: 'redirection'),
+                      GridItem("Walmart",
+                          url:
+                              'https://www.walmart.com/store/1757-hermantown-mn',
+                          type: 'redirection'),
+                      GridItem("Cub Foods",
+                          url:
+                              'https://www.cub.com/sm/pickup/rsid/1612?gad_source=1&gclid=CjwKCAjw5ImwBhBtEiwAFHDZx_QuvhTJKJBCgwh-vU9_w-gy59dpI88d1AwIdAoZyVnOA122s6oJUBoCvngQAvD_BwE',
+                          type: 'redirection'),
+                      // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
+                      // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -173,8 +183,8 @@ class FindGroceries extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.apartment,
                       size: 45,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle sign up action
                     Navigator.push(
@@ -190,8 +200,8 @@ class FindGroceries extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle login action
                     Navigator.push(
@@ -207,8 +217,8 @@ class FindGroceries extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle contact us action
                     Navigator.push(
@@ -224,8 +234,8 @@ class FindGroceries extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.info,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle settings action
                     Navigator.push(
@@ -273,8 +283,9 @@ class GridItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                  color: Color.fromARGB(255, 14, 13, 13),
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
