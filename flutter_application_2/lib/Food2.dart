@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Food.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -98,7 +99,7 @@ class Restaurantsnearme extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -107,42 +108,57 @@ class Restaurantsnearme extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 24,
                         // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                        color: Color.fromARGB(255, 250, 250, 247)),
                   ),
-               //   Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                  //   Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                 ],
               ),
-              SizedBox(),
+              SizedBox(
+                height: 50,
+              ),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 1.5,
-                  children: <Widget>[
-                    GridItem(
-                        "These food places nearby  the campus offer affordable and flavorful dining options, catering to diverse tastes and budgets.",
-                        url: 'https://iss.d.umn.edu/immigration/travel-info',
-                        type: 'No redirection'),
-                  ],
+                child: Center(
+                  child: Container(
+                    width: 320,
+                    child: GridView.count(
+                      crossAxisCount: 1, // 2 columns
+                      childAspectRatio: 1.3,
+                      children: <Widget>[
+                        GridItem(
+                            "These food places nearby  the campus offer affordable and flavorful dining options, catering to diverse tastes and budgets.",
+                            url:
+                                'https://iss.d.umn.edu/immigration/travel-info',
+                            type: 'No redirection'),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               SizedBox(),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 4,
-                  children: <Widget>[
-                    GridItem("McDonald's",
-                        url:
-                            'https://www.superonefoods.com/store-details/duluth-kenwood-super-one-foods',
-                        type: 'redirection'),
-                    GridItem("India Palace",
-                        url:
-                            'https://www.costco.com/warehouse-locations/duluth-mn-1422.html',
-                        type: 'redirection'),
-                    GridItem("Taco Bell",
-                        url: 'https://www.walmart.com/store/1757-hermantown-mn',
-                        type: 'redirection'),
-                  ],
+                child: Center(
+                  child: Container(
+                    width: 300,
+                    child: GridView.count(
+                      crossAxisCount: 1, // 2 columns
+                      childAspectRatio: 4,
+                      mainAxisSpacing: 30.0,
+                      children: <Widget>[
+                        GridItem("McDonald's",
+                            url:
+                                'https://www.superonefoods.com/store-details/duluth-kenwood-super-one-foods',
+                            type: 'redirection'),
+                        GridItem("India Palace",
+                            url:
+                                'https://www.costco.com/warehouse-locations/duluth-mn-1422.html',
+                            type: 'redirection'),
+                        GridItem("Taco Bell",
+                            url:
+                                'https://www.walmart.com/store/1757-hermantown-mn',
+                            type: 'redirection'),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -159,8 +175,8 @@ class Restaurantsnearme extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.apartment,
                       size: 45,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle sign up action
                     Navigator.push(
@@ -176,13 +192,13 @@ class Restaurantsnearme extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle login action
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Housing()),
+                      MaterialPageRoute(builder: (context) => Food()),
                     );
                   },
                 ),
@@ -193,8 +209,8 @@ class Restaurantsnearme extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle contact us action
                     Navigator.push(
@@ -210,8 +226,8 @@ class Restaurantsnearme extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.info,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Color.fromARGB(
+                          255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
                     // Handle settings action
                     Navigator.push(
@@ -253,14 +269,15 @@ class GridItem extends StatelessWidget {
         height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
+          color: Colors.white,
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                  color: Color.fromARGB(255, 19, 18, 18),
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
