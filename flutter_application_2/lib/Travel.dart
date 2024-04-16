@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -53,7 +54,7 @@ class Travel extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => MyApp()),
         );
               },
-              color: Colors.yellow, // Set color to yellow
+              color: const Color.fromRGBO(255, 204, 51, 1.0), // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -107,42 +108,44 @@ class Travel extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Travel",
+                    "Travel ",
                     style: TextStyle(
-                        fontSize: 24,
-                        // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                  Icon(Icons.directions_bus, color: Color.fromARGB(255, 250, 233, 77), size:30),
+                  Icon(Icons.directions_bus, color:Colors.white, size:30),
                 ],
               ),
               SizedBox(),
               Expanded(
+                child: Padding(
+    padding: EdgeInsets.all(10.0), 
                 child: GridView.count(
                   crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 2.05,
+                  childAspectRatio: 2.5,
+      mainAxisSpacing: 20.0, // Add vertical spacing between grid items
+      crossAxisSpacing: 10.0, 
                   children: <Widget>[
-                    GridItem("Travel in Duluth", url:'https://health-services.d.umn.edu/appointments/health-insurance-information', type:'DartPage'),
-                    GridItem("Foreign and In-land Travel", url:'https://isss.umn.edu/new-students/requirements/myisss', type:'DartPage'),
-                    GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
+                    GridItem("Travel in Duluth", url:'https://health-services.d.umn.edu/appointments/health-insurance-information', type:'DartPage', image:'lib/assets/TravelDuluth.jpg'),
+                    GridItem("Foreign and                             In-land Travel", url:'https://isss.umn.edu/new-students/requirements/myisss', type:'DartPage', image:'lib/assets/TravelOut.jpg'),
+                    GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/', type:'InAppBrowser',image: 'lib/assets/Campusmap.jpg'),
                   ],
+                ),
                 ),
               ),
             ],
           ),
         ),
                  bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
+  color: Color.fromRGBO(255, 204, 51, 1.0),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -155,12 +158,12 @@ class Travel extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.fastfood, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle login action
             Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Food()),
+          MaterialPageRoute(builder: (context) => Housing()),
         );
           },
         ),
@@ -168,7 +171,7 @@ class Travel extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
@@ -182,7 +185,7 @@ class Travel extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.info, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle settings action
             Navigator.push(
@@ -199,16 +202,13 @@ class Travel extends StatelessWidget {
     );
   }
 }
-
 class GridItem extends StatelessWidget {
   final String title;
-  // final double fontSize;
   final String url;
   final String type;
+  final String? image;
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url, required this.type});
-
+  GridItem(this.title, {required this.url, required this.type, this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -228,25 +228,43 @@ class GridItem extends StatelessWidget {
             );
           }
         } else if (type == "InAppBrowser") {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
-        );}
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
+          );
+        }
       },
       child: SizedBox(
-        height: 100, // Adjust the height as needed
+       // height: 100,
         child: Card(
-          elevation: 3,
-          color: Colors.yellow,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+          elevation: 10,
+          color: Colors.white,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10), // Adjust the border radius as needed
+              image: image != null
+                  ? DecorationImage(
+                      image: AssetImage(image!),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.4), // Adjust opacity here
+                        BlendMode.darken, // Adjust blend mode as needed
+                      ),
+                    )
+                  : null,
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(1.0),
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                   // color: title == "Campus Map" ? Colors.white : Colors.black, // Change text color based on title
+                   color:const Color.fromRGBO(255, 204, 51, 1.0),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
