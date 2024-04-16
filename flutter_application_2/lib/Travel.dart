@@ -182,7 +182,7 @@ class Travel extends StatelessWidget {
                     // Handle login action
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Housing()),
+                      MaterialPageRoute(builder: (context) => Food()),
                     );
                   },
                 ),
