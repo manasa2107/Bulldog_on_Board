@@ -99,7 +99,7 @@ class FindGroceries extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -108,12 +108,14 @@ class FindGroceries extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 24,
                         // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                        color: Color.fromARGB(255, 241, 241, 238)),
                   ),
                   // Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                 ],
               ),
-              SizedBox(),
+              SizedBox(
+                height: 50,
+              ),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 1, // 2 columns
@@ -265,7 +267,7 @@ class GridItem extends StatelessWidget {
         height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
+          color: Colors.white,
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
