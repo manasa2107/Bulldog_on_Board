@@ -112,6 +112,7 @@ class Login extends StatelessWidget {
                     SizedBox(width: 10),
                     Icon(
                       Icons.login,
+                      size: 40,
                       color: Color.fromRGBO(255, 204, 51, 1.0),
                     ),
                   ],
