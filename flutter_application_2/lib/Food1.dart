@@ -50,7 +50,8 @@ class FindGroceries extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
-              color: Colors.yellow, // Set color to yellow
+              color: const Color.fromRGBO(
+                  255, 204, 51, 1.0), // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -173,7 +174,7 @@ class FindGroceries extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Color.fromRGBO(255, 235, 59, 1),
+          color: const Color.fromRGBO(255, 204, 51, 1.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -199,7 +200,7 @@ class FindGroceries extends StatelessWidget {
                     left: 10, right: 10), // Adjust left and right margins here
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
-                      size: 40,
+                      size: 45,
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
@@ -216,7 +217,7 @@ class FindGroceries extends StatelessWidget {
                     left: 10, right: 10), // Adjust left and right margins here
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
-                      size: 40,
+                      size: 45,
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
@@ -233,7 +234,7 @@ class FindGroceries extends StatelessWidget {
                     left: 10, right: 10), // Adjust left and right margins here
                 child: IconButton(
                   icon: Icon(Icons.info,
-                      size: 40,
+                      size: 45,
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
