@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_application_2/Food.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -51,7 +53,7 @@ class TravelInDuluthPage extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => MyApp()),
         );
               },
-              color: Colors.yellow, // Set color to yellow
+              color: const Color.fromRGBO(255, 204, 51, 1.0), // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -100,7 +102,7 @@ class TravelInDuluthPage extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -108,56 +110,62 @@ class TravelInDuluthPage extends StatelessWidget {
                     "Travel in Duluth",
                     style: TextStyle(
                         fontSize: 24,
-                        // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                 Icon(Icons.directions_bus, color: Color.fromARGB(255, 250, 233, 77), size:30),
+                 Icon(Icons.directions_bus, color: Colors.white, size:30),
                 ],
               ),
-              SizedBox(),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 1.5,
-                  children: <Widget>[
-                    GridItem("Duluth Transit app enables real-time bus tracking and route planning. Bulldog Lyft offers UMD discounts for convenient rides across the city. These services enhance travel convenience in Duluth", url:'https://iss.d.umn.edu/immigration/travel-info'),
-                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
-                ),
-              ),
-              SizedBox(),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2, // 2 columns
-                  childAspectRatio: 2,
-                  children: <Widget>[
-                    GridItem("DTA", url:'https://www.duluthtransit.com/'),
-                    GridItem("Lyft", url:'https://www.lyft.com/rider/cities/duluth-mn'),
-                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
-                ),
-              ),
-
-
+              SizedBox(height:30),
+Expanded(
+  child: Padding(padding: EdgeInsets.all(10),
+    child: GridView.count(
+      crossAxisCount: 1, // 1 column for this section
+      childAspectRatio: 2,
+      children: <Widget>[
+        GridItem(
+          title: "Duluth Transit app enables real-time bus tracking and route planning. Bulldog Lyft offers UMD discounts for convenient rides across the city. These services enhance travel convenience in Duluth.",
+          url: 'https://iss.d.umn.edu/immigration/travel-info',
+        ),
+      ],
+    )
+    ),
+),
+Expanded(
+  child: Padding(
+    padding: EdgeInsets.all(15.0),
+    child: GridView.count(
+      crossAxisCount: 2, // 2 columns
+      childAspectRatio: 1.05,
+    // mainAxisSpacing: 10.0, // Add vertical spacing between grid items
+    crossAxisSpacing: 20.0,
+      children: <Widget>[
+        GridItem(
+        //  title: "DTA",
+          backgroundImage: 'lib/assets/DTA.jpg',
+          url: 'https://www.duluthtransit.com/',
+        ),
+        GridItem(
+         // title: "Lyft",
+          backgroundImage: 'lib/assets/Lyft.png',
+          url: 'https://www.lyft.com/rider/cities/duluth-mn',
+        ),
+      ],
+    ),
+  ),
+),
             ],
           ),
         ),
                  bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
+  color: const Color.fromRGBO(255, 204, 51, 1.0),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.apartment, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
             Navigator.push(
@@ -170,12 +178,12 @@ class TravelInDuluthPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.fastfood, size: 45, color:Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle login action
             Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Housing()),
+          MaterialPageRoute(builder: (context) => Food()),
         );
           },
         ),
@@ -183,7 +191,7 @@ class TravelInDuluthPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle contact us action
             Navigator.push(
@@ -197,7 +205,7 @@ class TravelInDuluthPage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
+          icon: Icon(Icons.info, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
             // Handle settings action
             Navigator.push(
@@ -216,13 +224,11 @@ class TravelInDuluthPage extends StatelessWidget {
 }
 
 class GridItem extends StatelessWidget {
-  final String title;
-  // final double fontSize;
+  final String? title;
   final String url;
+  final String? backgroundImage; // Making backgroundImage optional
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url});
-
+  GridItem({this.title, required this.url, this.backgroundImage});
 
   @override
   Widget build(BuildContext context) {
@@ -230,23 +236,39 @@ class GridItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
+    MaterialPageRoute(builder: (context) => WebViewPage(title: title ?? "", url: url)),
         );
       },
       child: SizedBox(
-        height: 100, // Adjust the height as needed
+       // height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+          color: Colors.white,
+          child: Container(
+            decoration: backgroundImage != null
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    image: DecorationImage(
+                      image: AssetImage(backgroundImage!),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.1),
+                        BlendMode.darken,
+                      ),
+                    ),
+                  )
+                : null,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(
+                  title ?? "", // Use empty string if title is null
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -257,22 +279,79 @@ class GridItem extends StatelessWidget {
   }
 }
 
+// class GridItem extends StatelessWidget {
+//   final String? title;
+//   final String url;
+//   final String? backgroundImage; // Making backgroundImage optional
+
+//   GridItem({this.title, required this.url, this.backgroundImage});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       onTap: () {
+//         Navigator.push(
+//           context,
+//           MaterialPageRoute(builder: (context) => WebViewPage(title: title ?? "", url: url)),
+//         );
+//       },
+//       child: SizedBox(
+//         // height: 100, // Adjust the height as needed
+//         child: Card(
+//           elevation: 3,
+//           color: Colors.white,
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(30), // Circular border
+//           ),
+//           child: Container(
+//             decoration: backgroundImage != null
+//                 ? BoxDecoration(
+//                     image: DecorationImage(
+//                       image: AssetImage(backgroundImage!),
+//                       fit: BoxFit.cover,
+//                       colorFilter: ColorFilter.mode(
+//                         Colors.black.withOpacity(0.1),
+//                         BlendMode.darken,
+//                       ),
+//                     ),
+//                   )
+//                 : null,
+//             child: Center(
+//               child: Padding(
+//                 padding: const EdgeInsets.all(10.0),
+//                 child: Text(
+//                   title ?? "", // Use empty string if title is null
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     color: Colors.black,
+//                     fontSize: 20,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class WebViewPage extends StatelessWidget {
   final String title;
   final String url;
 
-  WebViewPage({required this.title,required this.url});
+   WebViewPage({required this.title,required this.url});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+       // title: Text(title),
       ),
       body: WebView(
         initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
-        
       ),
     );
   }
