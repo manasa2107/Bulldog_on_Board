@@ -139,14 +139,14 @@ class Opage extends StatelessWidget {
           ),
         ),
                  bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
+  color: Color.fromRGBO(255, 204, 51, 1.0),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-        icon: Icon(Icons.apartment, size: 40, color:Colors.black), 
+        icon: Icon(Icons.apartment, size: 45, color:Colors.black), 
        //   icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle sign up action
@@ -161,7 +161,7 @@ class Opage extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
           // icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          icon: Icon(Icons.fastfood, size: 40, color:Colors.black), 
+          icon: Icon(Icons.fastfood, size: 45, color:Colors.black), 
           onPressed: () {
             // Handle login action
             Navigator.push(
@@ -175,7 +175,7 @@ class Opage extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
           // icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-           icon: Icon(Icons.directions_bus, size: 40, color:Colors.black), 
+           icon: Icon(Icons.directions_bus, size: 45, color:Colors.black), 
           onPressed: () {
             // Handle contact us action
             Navigator.push(
@@ -189,7 +189,7 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-      icon: Icon(Icons.info, size: 40, color:Colors.black), 
+      icon: Icon(Icons.info, size: 45, color:Colors.black), 
          // icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
             // Handle settings action
