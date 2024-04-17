@@ -8,7 +8,7 @@ import 'package:flutter_application_2/main.dart';
 
 class SignUp extends StatelessWidget {
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -46,7 +46,8 @@ class SignUp extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
-              color: Colors.yellow, // Set color to yellow
+              color: const Color.fromRGBO(
+                  255, 204, 51, 1.0), // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -94,7 +95,7 @@ class SignUp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 148, 19, 10),
         body: Container(
           margin:
-              EdgeInsets.only(top: 5), // Adjust the margin to reduce the gap
+              EdgeInsets.only(top: 0), // Adjust the margin to reduce the gap
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -106,11 +107,15 @@ class SignUp extends StatelessWidget {
                       "Sign Up",
                       style: TextStyle(
                           fontSize: 40.0,
-                          color: Colors.yellow,
+                          color: const Color.fromRGBO(255, 204, 51, 1.0),
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 10),
-                    Icon(Icons.account_circle, color: Colors.yellow),
+                    Icon(
+                      Icons.account_circle,
+                      size: 40,
+                      color: const Color.fromRGBO(255, 204, 51, 1.0),
+                    ),
                   ],
                 ),
                 SizedBox(height: 20.0),
@@ -119,7 +124,7 @@ class SignUp extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 240, 219, 29),
+                    color: Colors.white,
                     border: Border.all(
                       color: Colors.black,
                       width: 2.0,
@@ -135,14 +140,17 @@ class SignUp extends StatelessWidget {
                           Text(
                             "Username or Email",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 175, 19, 8),
-                              fontWeight:
-                                  FontWeight.bold, // Set text color to red
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20, // Set text color to red
                             ),
                           ),
                           SizedBox(height: 5.0),
                           TextField(
                             decoration: InputDecoration(
+                              fillColor: Colors.grey[
+                                  300], // Choose the shade of gray you prefer
+                              filled: true,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -158,14 +166,17 @@ class SignUp extends StatelessWidget {
                           Text(
                             "Password",
                             style: TextStyle(
-                              color: Color.fromARGB(
-                                  255, 175, 19, 8), // Set text color to red
+                              color: Colors.black, // Set text color to red
                               fontWeight: FontWeight.bold,
+                              fontSize: 20,
                             ),
                           ),
                           SizedBox(height: 5.0),
                           TextField(
                             decoration: InputDecoration(
+                              fillColor: Colors.grey[
+                                  300], // Choose the shade of gray you prefer
+                              filled: true,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -181,29 +192,32 @@ class SignUp extends StatelessWidget {
                           Text(
                             "Already a member?",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 175, 19, 8),
+                              color: Colors.black,
                               fontStyle: FontStyle.italic,
+                              fontSize: 16,
                             ),
                           ),
                           GestureDetector(
-      onTap: () {
-        // Navigate to Login page when "Login" is clicked
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Login()), 
-        );
-      },
-      child: Text(
-        "Login",
-        style: TextStyle(
-          decoration: TextDecoration.underline,
-          color: Color.fromARGB(255, 175, 19, 8),
-          fontStyle: FontStyle.italic,
-        ),
-      ),
-    ),
-  ],
-),
+                            onTap: () {
+                              // Navigate to Login page when "Login" is clicked
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()),
+                              );
+                            },
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.black,
+                                fontStyle: FontStyle.italic,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       SizedBox(height: 20.0),
                       ElevatedButton(
                         onPressed: () {
@@ -215,8 +229,9 @@ class SignUp extends StatelessWidget {
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
-                              color: const Color.fromARGB(255, 240, 219, 29),
-                              fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
                         ),
                       ),
                     ],
@@ -227,66 +242,77 @@ class SignUp extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle sign up action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Housing()),
-        );
-          },
+          color: const Color.fromRGBO(255, 204, 51, 1.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.apartment,
+                      size: 45,
+                      color: Colors.black), // Customize size and color here
+                  onPressed: () {
+                    // Handle sign up action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Housing()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.fastfood,
+                      size: 45,
+                      color: Colors.black), // Customize size and color here
+                  onPressed: () {
+                    // Handle login action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Food()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.directions_bus,
+                      size: 45,
+                      color: Colors.black), // Customize size and color here
+                  onPressed: () {
+                    // Handle contact us action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Travel()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 10, right: 10), // Adjust left and right margins here
+                child: IconButton(
+                  icon: Icon(Icons.info,
+                      size: 45,
+                      color: Colors.black), // Customize size and color here
+                  onPressed: () {
+                    // Handle settings action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Opage()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle login action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Food()),
-        );
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle contact us action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Travel()),
-        );
-          },
-        ),
-      ),
-      
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle settings action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Opage()),
-        );
-          },
-        ),
-      ),
-    ],
-  ),
-),
       ),
     );
   }
