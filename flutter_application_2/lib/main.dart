@@ -7,6 +7,8 @@ import 'Housing.dart';
 import 'Travel.dart';
 import 'Login_Page.dart';
 import 'Food.dart';
+import 'settings.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -210,6 +212,10 @@ class MainScreen extends StatelessWidget {
                         255, 235, 59, 1)), // Customize size and color here
                 onPressed: () {
                   // Handle settings action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                  );
                 },
               ),
             ),
