@@ -10,9 +10,6 @@ import 'main.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
-
-
-
 class InternationalTravelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,15 +18,14 @@ class InternationalTravelPage extends StatelessWidget {
         appBar: AppBar(
           title: Container(
             padding: EdgeInsets.all(5),
-            
-          child: Text(
-            ' Bulldog on Board   ',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromRGBO(255, 204, 51, 1.0), 
+            child: Text(
+              ' Bulldog on Board   ',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromRGBO(255, 204, 51, 1.0),
+              ),
             ),
-          ),
           ),
           leading: Builder(
             builder: (BuildContext context) {
@@ -50,169 +46,178 @@ class InternationalTravelPage extends StatelessWidget {
               onPressed: () {
                 // Add functionality for the house icon
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyApp()),
-        );
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
               },
-              color: Colors.yellow, // Set color to yellow
+              color: const Color.fromRGBO(255, 204, 51, 1.0) // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
         drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(152, 3, 3, 0.929),
-              ),
-              child: Text(
-                'Bulldog on Board',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(152, 3, 3, 0.929),
+                ),
+                child: Text(
+                  'Bulldog on Board',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              //leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {
-                // Navigate to signup screen or perform action
-              },
-            ),
-             ListTile(
-              //leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Navigate to settings screen or perform action
-              },
-            ),
-            ListTile(
-             // leading: Icon(Icons.login),
-              title: Text('Signout'),
-              onTap: () {
-                // Navigate to login screen or perform action
-              },
-            ),
-          ],
+              ListTile(
+                //leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+                onTap: () {
+                  // Navigate to signup screen or perform action
+                },
+              ),
+              ListTile(
+                //leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigate to settings screen or perform action
+                },
+              ),
+              ListTile(
+                // leading: Icon(Icons.login),
+                title: Text('Signout'),
+                onTap: () {
+                  // Navigate to login screen or perform action
+                },
+              ),
+            ],
+          ),
         ),
-      ),
         body: Container(
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     "Foreign and In-land Travel",
                     style: TextStyle(
-                        fontSize: 24,
-                        // fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 250, 233, 83)),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-        Icon(Icons.directions_bus, color: Color.fromARGB(255, 250, 233, 77), size:30),
+                  Icon(Icons.directions_bus, color: Colors.white, size: 30),
                 ],
               ),
-              SizedBox(),
+            //  SizedBox(height: 40),
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 1.5,
-                  children: <Widget>[
-                    GridItem("Essential documentation requirements for both domestic and international travel for F-1 students. It covers necessary documents for re-entry into the U.S. and emphasizes the importance of planning ahead to ensure compliance and smooth travel experiences.", url:'https://iss.d.umn.edu/immigration/travel-info', icon: null,),
-                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: GridView.count(
+                    crossAxisCount: 1, // 2 columns
+                    childAspectRatio: 1.5,
+                    children: <Widget>[
+                      GridItem(
+                        "Essential documentation requirements for both domestic and international travel for F-1 students. It covers necessary documents for re-entry into the U.S. and emphasizes the importance of planning ahead to ensure compliance and smooth travel experiences.",
+                        url: 'https://iss.d.umn.edu/immigration/travel-info',
+                        icon: null,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1, // 2 columns
-                  childAspectRatio: 3.5,
-                  children: <Widget>[
-                    GridItem("More Information...", url:'https://iss.d.umn.edu/immigration/travel-info',icon: Icon(Icons.flight)),
-                    //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                    //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                    // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                    // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                    // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
-                  ],
+        GestureDetector(
+                onTap: () {
+                 Navigator.push(
+          context,
+    MaterialPageRoute(builder: (context) => WebViewPage(title: "Travel Info", url:'https://iss.d.umn.edu/immigration/travel-info'))
+        );
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 125), // Adjust vertical padding here
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Apply tilt to the airplane image
+                      Transform.rotate(
+                        angle: 45 * 3.1415927 / 180, // 45 degrees in radians
+                        child: RotationTransition(
+                          turns: AlwaysStoppedAnimation(-90 / 360), // -15 degrees
+                          child: Icon(
+                            Icons.airplanemode_active,
+                            color: Colors.white,
+                            size: 100,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-
-
             ],
           ),
         ),
-                 bottomNavigationBar: BottomAppBar(
-  color: Color.fromRGBO(255, 235, 59, 1),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle sign up action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Housing()),
-        );
-          },
+        bottomNavigationBar: BottomAppBar(
+          color: const Color.fromRGBO(255, 204, 51, 1.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: IconButton(
+                  icon: Icon(Icons.apartment, size: 45, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Housing()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: IconButton(
+                  icon: Icon(Icons.fastfood, size: 45, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Housing()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: IconButton(
+                  icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Travel()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                child: IconButton(
+                  icon: Icon(Icons.info, size: 45, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Opage()),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle login action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Housing()),
-        );
-          },
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle contact us action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Travel()),
-        );
-          },
-        ),
-      ),
-      
-      Padding(
-        padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
-        child: IconButton(
-          icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
-          onPressed: () {
-            // Handle settings action
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Opage()),
-        );
-          },
-        ),
-      ),
-    ],
-  ),
-),
       ),
     );
   }
@@ -237,17 +242,18 @@ class GridItem extends StatelessWidget {
         );
       },
       child: SizedBox(
-        height: 100, // Adjust the height as needed
+       // height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
+          color: Colors.white,
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
