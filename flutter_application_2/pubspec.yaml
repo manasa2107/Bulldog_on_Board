@@ -72,6 +72,7 @@ flutter:
     - lib/assets/Campusmap.jpg
     - lib/assets/TravelDuluth.jpg
     - lib/assets/TravelOut.jpg
+    - lib/assets/restaurants.jpg
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
