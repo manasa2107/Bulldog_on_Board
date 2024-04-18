@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_2/Food.dart';
+import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -44,7 +45,6 @@ class ContactUs extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
-              color:const Color.fromRGBO(255, 204, 51, 1.0),
               onPressed: () {
                 // Add functionality for the house icon
                 Navigator.push(
@@ -52,7 +52,7 @@ class ContactUs extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
-             // color: Colors.yellow, // Set color to yellow
+              color: Colors.yellow, // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -83,9 +83,10 @@ class ContactUs extends StatelessWidget {
               ListTile(
                 //leading: Icon(Icons.settings),
                 title: Text('Settings'),
-                onTap: () {
-                  // Navigate to settings screen or perform action
-                },
+               onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
               ),
               ListTile(
                 // leading: Icon(Icons.login),
@@ -101,22 +102,22 @@ class ContactUs extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 40),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Contact Us  ",
+                    "Contact Us",
                     style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color:Colors.white),
-                        textAlign: TextAlign.center,
+                        // color: Color.fromARGB(255, 250, 233, 83)),
+                        color: Colors.white),
                   ),
-                Icon(Icons.contact_mail, color:Colors.white, size:30),
+                  //Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                 ],
               ),
-              SizedBox(height: 60),
+              SizedBox(height: 80),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 1, // 1 column for alignment
@@ -131,15 +132,16 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Stanley.N",
-                              url: 'https://in.linkedin.com/in/stanley-sujith-nelavala-5812381a9'),
+                          child: GridItem("Stanley"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
+                        Icon(Icons.email, size: 30),
+                        // SizedBox(width: 10), // Space between icons
+                        // Icon(Icons.linked_camera, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 30),
                       ],
                     ),
                     Row(
@@ -148,18 +150,16 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Manasa.B",
-                              url:
-                                  'https://www.linkedin.com/in/boyapati-yagna-manasa-a9456710a'),
+                          child: GridItem("Manasa"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
+                        Icon(Icons.email, size: 30),
                         // SizedBox(width: 10), // Space between icons
                         // Icon(Icons.linked_camera, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 30),
                       ],
                     ),
                     Row(
@@ -168,18 +168,16 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Harika.Y",
-                              url:
-                                  'https://in.linkedin.com/in/harika-yarlagadda-132243225?trk=people-guest_people_search-card'),
+                          child: GridItem("Harika.Y"),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
+                        Icon(Icons.email, size: 30),
                         // SizedBox(width: 10), // Space between icons
                         // Icon(Icons.linked_camera, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 30),
                       ],
                     ),
                   ],
@@ -189,7 +187,7 @@ class ContactUs extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: const Color.fromRGBO(255, 204, 51, 1.0),
+          color: Color.fromRGBO(255, 235, 59, 1),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -199,7 +197,8 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.apartment,
                       size: 45,
-                      color: Colors.black), // Customize size and color here
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
                   onPressed: () {
                     // Handle sign up action
                     Navigator.push(
@@ -215,7 +214,8 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
                       size: 40,
-                      color: Colors.black), // Customize size and color here
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
                   onPressed: () {
                     // Handle login action
                     Navigator.push(
@@ -231,7 +231,8 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
                       size: 40,
-                      color: Colors.black), // Customize size and color here
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
                   onPressed: () {
                     // Handle contact us action
                     Navigator.push(
@@ -247,7 +248,8 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.info,
                       size: 40,
-                      color: Colors.black), // Customize size and color here
+                      color: const Color.fromRGBO(
+                          152, 3, 3, 0.929)), // Customize size and color here
                   onPressed: () {
                     // Handle settings action
                     Navigator.push(
@@ -268,33 +270,26 @@ class ContactUs extends StatelessWidget {
 class GridItem extends StatelessWidget {
   final String title;
   // final double fontSize;
-  final String url;
+  //final String url;
 
   // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url});
+  GridItem(this.title);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => WebViewPage(title: title, url: url)),
-        );
-      },
       child: SizedBox(
-        height: 70, // Adjust the height as needed
+        height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.white,
+          color: Colors.yellow,
+          child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
-                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: const Color.fromRGBO(152, 3, 3, 0.929),
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -302,7 +297,8 @@ class GridItem extends StatelessWidget {
             ),
           ),
         ),
-      );
+      ),
+    );
   }
 }
 
