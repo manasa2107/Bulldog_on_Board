@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_2/Food.dart';
+import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -10,6 +12,7 @@ import 'main.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
+
 class InternationalTravelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -41,17 +44,18 @@ class InternationalTravelPage extends StatelessWidget {
           ),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.home), // House icon
-              iconSize: 35,
-              onPressed: () {
-                // Add functionality for the house icon
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
-                );
-              },
-              color: const Color.fromRGBO(255, 204, 51, 1.0) // Set color to yellow
-            ),
+                icon: Icon(Icons.home), // House icon
+                iconSize: 35,
+                onPressed: () {
+                  // Add functionality for the house icon
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyApp()),
+                  );
+                },
+                color: const Color.fromRGBO(
+                    255, 204, 51, 1.0) // Set color to yellow
+                ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
         ),
@@ -82,8 +86,9 @@ class InternationalTravelPage extends StatelessWidget {
                 //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
-                  // Navigate to settings screen or perform action
-                },
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
               ),
               ListTile(
                 // leading: Icon(Icons.login),
@@ -114,7 +119,7 @@ class InternationalTravelPage extends StatelessWidget {
                   Icon(Icons.directions_bus, color: Colors.white, size: 30),
                 ],
               ),
-            //  SizedBox(height: 40),
+              //  SizedBox(height: 40),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(10.0),
@@ -131,15 +136,20 @@ class InternationalTravelPage extends StatelessWidget {
                   ),
                 ),
               ),
-        GestureDetector(
+              GestureDetector(
                 onTap: () {
-                 Navigator.push(
-          context,
-    MaterialPageRoute(builder: (context) => WebViewPage(title: "Travel Info", url:'https://iss.d.umn.edu/immigration/travel-info'))
-        );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => WebViewPage(
+                              title: "Travel Info",
+                              url:
+                                  'https://iss.d.umn.edu/immigration/travel-info')));
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 125), // Adjust vertical padding here
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 125), // Adjust vertical padding here
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -147,7 +157,8 @@ class InternationalTravelPage extends StatelessWidget {
                       Transform.rotate(
                         angle: 45 * 3.1415927 / 180, // 45 degrees in radians
                         child: RotationTransition(
-                          turns: AlwaysStoppedAnimation(-90 / 360), // -15 degrees
+                          turns:
+                              AlwaysStoppedAnimation(-90 / 360), // -15 degrees
                           child: Icon(
                             Icons.airplanemode_active,
                             color: Colors.white,
@@ -194,7 +205,8 @@ class InternationalTravelPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 10, right: 10),
                 child: IconButton(
-                  icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),
+                  icon:
+                      Icon(Icons.directions_bus, size: 45, color: Colors.black),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -229,8 +241,7 @@ class GridItem extends StatelessWidget {
   final String url;
 
   // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title, {required this.url,  Icon? icon});
-
+  GridItem(this.title, {required this.url, Icon? icon});
 
   @override
   Widget build(BuildContext context) {
@@ -238,11 +249,12 @@ class GridItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => WebViewPage(title:title, url: url)),
+          MaterialPageRoute(
+              builder: (context) => WebViewPage(title: title, url: url)),
         );
       },
       child: SizedBox(
-       // height: 100, // Adjust the height as needed
+        // height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
           color: Colors.white,
@@ -270,7 +282,7 @@ class WebViewPage extends StatelessWidget {
   final String title;
   final String url;
 
-  WebViewPage({required this.title,required this.url});
+  WebViewPage({required this.title, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -281,7 +293,6 @@ class WebViewPage extends StatelessWidget {
       body: WebView(
         initialUrl: url,
         javascriptMode: JavascriptMode.unrestricted,
-        
       ),
     );
   }
