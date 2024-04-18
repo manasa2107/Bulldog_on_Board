@@ -147,15 +147,15 @@ class Restaurantsnearme extends StatelessWidget {
                       children: <Widget>[
                         GridItem("McDonald's",
                             url:
-                                'https://www.superonefoods.com/store-details/duluth-kenwood-super-one-foods',
+                                'https://www.mcdonalds.com/us/en-us/location/mn/duluth/2105-london-rd/3491.html',
                             type: 'redirection'),
                         GridItem("India Palace",
                             url:
-                                'https://www.costco.com/warehouse-locations/duluth-mn-1422.html',
+                                'https://www.doordash.com/store/india-palace-duluth-488205/',
                             type: 'redirection'),
                         GridItem("Taco Bell",
                             url:
-                                'https://www.walmart.com/store/1757-hermantown-mn',
+                                'https://www.tacobell.com/food?store=015637',
                             type: 'redirection'),
                       ],
                     ),
