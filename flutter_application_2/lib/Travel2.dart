@@ -186,7 +186,7 @@ class InternationalTravelPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Housing()),
+                      MaterialPageRoute(builder: (context) => Food()),
                     );
                   },
                 ),
