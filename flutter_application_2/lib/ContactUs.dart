@@ -45,6 +45,7 @@ class ContactUs extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
+              color:const Color.fromRGBO(255, 204, 51, 1.0),
               onPressed: () {
                 // Add functionality for the house icon
                 Navigator.push(
@@ -52,7 +53,7 @@ class ContactUs extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
-              color: Colors.yellow, // Set color to yellow
+             // color: Colors.yellow, // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -83,10 +84,10 @@ class ContactUs extends StatelessWidget {
               ListTile(
                 //leading: Icon(Icons.settings),
                 title: Text('Settings'),
-               onTap: () {
-                Navigator.push(context,
+                onTap: () {
+                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SettingsPage()));
-              },
+                },
               ),
               ListTile(
                 // leading: Icon(Icons.login),
@@ -102,22 +103,22 @@ class ContactUs extends StatelessWidget {
           color: Color.fromARGB(237, 152, 3, 3),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 10),
+              SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Contact Us",
+                    "Contact Us  ",
                     style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        // color: Color.fromARGB(255, 250, 233, 83)),
-                        color: Colors.white),
+                        color:Colors.white),
+                        textAlign: TextAlign.center,
                   ),
-                  //Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
+                Icon(Icons.contact_mail, color:Colors.white, size:30),
                 ],
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 60),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 1, // 1 column for alignment
@@ -132,16 +133,15 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Stanley"),
+                          child: GridItem("Stanley.N",
+                              url: 'https://in.linkedin.com/in/stanley-sujith-nelavala-5812381a9'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 30),
-                        // SizedBox(width: 10), // Space between icons
-                        // Icon(Icons.linked_camera, size: 30),
+                        Icon(Icons.email, size: 35),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 30),
+                        Icon(Icons.facebook, size: 35),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 30),
+                        Icon(Icons.phone, size: 35),
                       ],
                     ),
                     Row(
@@ -150,16 +150,18 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Manasa"),
+                          child: GridItem("Manasa.B",
+                              url:
+                                  'https://www.linkedin.com/in/boyapati-yagna-manasa-a9456710a'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 30),
+                        Icon(Icons.email, size: 35),
                         // SizedBox(width: 10), // Space between icons
                         // Icon(Icons.linked_camera, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 30),
+                        Icon(Icons.facebook, size: 35),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 30),
+                        Icon(Icons.phone, size: 35),
                       ],
                     ),
                     Row(
@@ -168,16 +170,18 @@ class ContactUs extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2),
-                          child: GridItem("Harika.Y"),
+                          child: GridItem("Harika.Y",
+                              url:
+                                  'https://in.linkedin.com/in/harika-yarlagadda-132243225?trk=people-guest_people_search-card'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 30),
+                        Icon(Icons.email, size: 35),
                         // SizedBox(width: 10), // Space between icons
                         // Icon(Icons.linked_camera, size: 30),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 30),
+                        Icon(Icons.facebook, size: 35),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 30),
+                        Icon(Icons.phone, size: 35),
                       ],
                     ),
                   ],
@@ -187,7 +191,7 @@ class ContactUs extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          color: Color.fromRGBO(255, 235, 59, 1),
+          color: const Color.fromRGBO(255, 204, 51, 1.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -197,8 +201,7 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.apartment,
                       size: 45,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Colors.black), // Customize size and color here
                   onPressed: () {
                     // Handle sign up action
                     Navigator.push(
@@ -214,8 +217,7 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.fastfood,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Colors.black), // Customize size and color here
                   onPressed: () {
                     // Handle login action
                     Navigator.push(
@@ -231,8 +233,7 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.directions_bus,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Colors.black), // Customize size and color here
                   onPressed: () {
                     // Handle contact us action
                     Navigator.push(
@@ -248,8 +249,7 @@ class ContactUs extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.info,
                       size: 40,
-                      color: const Color.fromRGBO(
-                          152, 3, 3, 0.929)), // Customize size and color here
+                      color: Colors.black), // Customize size and color here
                   onPressed: () {
                     // Handle settings action
                     Navigator.push(
@@ -270,26 +270,33 @@ class ContactUs extends StatelessWidget {
 class GridItem extends StatelessWidget {
   final String title;
   // final double fontSize;
-  //final String url;
+  final String url;
 
   // GridItem(this.title, {required this.fontSize, required this.url});
-  GridItem(this.title);
+  GridItem(this.title, {required this.url});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => WebViewPage(title: title, url: url)),
+        );
+      },
       child: SizedBox(
-        height: 100, // Adjust the height as needed
+        height: 70, // Adjust the height as needed
         child: Card(
           elevation: 3,
-          color: Colors.yellow,
-          child: Center(
+          color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: const Color.fromRGBO(152, 3, 3, 0.929),
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -297,8 +304,7 @@ class GridItem extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
