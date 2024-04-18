@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/ContactUs.dart';
+import 'package:flutter_application_2/Settings.dart';
 import 'package:flutter_application_2/SignUp.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Opage.dart';
@@ -7,8 +8,6 @@ import 'Housing.dart';
 import 'Travel.dart';
 import 'Login_Page.dart';
 import 'Food.dart';
-import 'settings.dart';
-
 
 void main() => runApp(const MyApp());
 
@@ -39,7 +38,7 @@ class MainScreen extends StatelessWidget {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.menu,size:30),
               color: Color.fromRGBO(152, 3, 3, 0.929),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
@@ -49,13 +48,6 @@ class MainScreen extends StatelessWidget {
         ),
         title: Container(
           padding: EdgeInsets.all(5),
-          // decoration: BoxDecoration(
-          //   borderRadius: BorderRadius.circular(14), // Rounded corners
-          //   border: Border.all(
-          //     color: Color.fromRGBO(152, 3, 3, 0.922),  // Border color
-          //     width: 4,            // Border width
-          //   ),
-          // ),
           child: Text(
             ' Bulldog on Board ',
             style: TextStyle(
@@ -93,17 +85,51 @@ class MainScreen extends StatelessWidget {
           ),
           SizedBox(height: 3),
           GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 2,
-            childAspectRatio: 0.95,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              _buildGridItem(context, 'Housing', Icons.home, Housing()),
-              _buildGridItem(context, 'Food', Icons.fastfood, Food()),
-              _buildGridItem(context, 'Travel', Icons.flight, Travel()),
-              _buildGridItem(context, 'Other Information', Icons.info, Opage()),
-            ],
-          ),
+  shrinkWrap: true,
+  crossAxisCount: 2,
+  // childAspectRatio: 0.95,
+  childAspectRatio: 1,
+  physics: NeverScrollableScrollPhysics(),
+  children: [
+    _buildGridItem(
+      context, 
+      'Housing', 
+      Icons.apartment,
+      Housing(),
+      'lib/assets/Housing.jpg', // Path to housing background image
+      10.0, // Border radius for housing item
+      0.3, // Opacity for housing item
+    ),
+    _buildGridItem(
+      context, 
+      'Food', 
+      Icons.fastfood, 
+      Food(),
+      'lib/assets/Food.jpg', // Path to food background image
+      12.0, // Border radius for food item
+      0.5, // Opacity for food item
+    ),
+    _buildGridItem(
+      context, 
+      'Travel', 
+      Icons.directions_bus, 
+      Travel(),
+      'lib/assets/Travel.jpg', // Path to travel background image
+      12.0, // Border radius for travel item
+      0.6, // Opacity for travel item
+    ),
+    _buildGridItem(
+      context, 
+      'Other Information', 
+      Icons.info, 
+      Opage(),
+      'lib/assets/Otherinfo.jpg', // Path to other info background image
+      12.0, // Border radius for other info item
+      0.6, // Opacity for other info item
+    ),
+  ],
+),
+
         ],
       ),
       drawer: Drawer(
@@ -157,8 +183,7 @@ class MainScreen extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.account_circle,
                     size: 40,
-                    color: const Color.fromRGBO(
-                        255, 235, 59, 1)), // Customize size and color here
+                    color: const Color.fromRGBO(255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
                   // Handle sign up action
                   Navigator.push(
@@ -174,8 +199,7 @@ class MainScreen extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.login,
                     size: 40,
-                    color: const Color.fromRGBO(
-                        255, 235, 59, 1)), // Customize size and color here
+                    color: const Color.fromRGBO(255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
                   // Handle login action
                   Navigator.push(
@@ -191,8 +215,7 @@ class MainScreen extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.contact_mail,
                     size: 40,
-                    color: const Color.fromRGBO(
-                        255, 235, 59, 1)), // Customize size and color here
+                    color: const Color.fromRGBO(255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
                   // Handle contact us action
                   Navigator.push(
@@ -208,11 +231,9 @@ class MainScreen extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.settings,
                     size: 40,
-                    color: const Color.fromRGBO(
-                        255, 235, 59, 1)), // Customize size and color here
+                    color: const Color.fromRGBO(255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
-                  // Handle settings action
-                  Navigator.push(
+                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SettingsPage()),
                   );
@@ -222,40 +243,58 @@ class MainScreen extends StatelessWidget {
           ],
         ),
       ),
-// floatingActionButton: FloatingActionButton(
-//         onPressed: () {
-//           // Navigate to OtherInformationPage when FloatingActionButton is pressed
-//           Navigator.push(
-//             context,
-//             MaterialPageRoute(builder: (context) => OtherInformationPage()),
-//           );
-//         },
-//         child: Icon(Icons.info), // Icon for FloatingActionButton
-//       ),
     );
   }
 
-  Widget _buildGridItem(
-      BuildContext context, String title, IconData icon, Widget page) {
-    return GestureDetector(
-      onTap: () {
-        // Handle item tap
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => page),
-        );
-      },
-      child: Card(
-        elevation: 4,
+ Widget _buildGridItem(
+  BuildContext context, 
+  String title, 
+  IconData icon, 
+  Widget page,
+  String backgroundImage,
+  double borderRadius,
+  double opacity,
+) {
+  return GestureDetector(
+    onTap: () {
+      // Handle item tap
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => page),
+      );
+    },
+    child: Card(
+      elevation: 4,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(borderRadius),
+          image: DecorationImage(
+            image: AssetImage(backgroundImage),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(opacity),
+              BlendMode.darken,
+            ),
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: const Color.fromRGBO(152, 3, 3, 0.922)),
+            Icon(icon, size: 55, color: Colors.white),
             SizedBox(height: 10),
-            Text(title, style: TextStyle(fontSize: 16)),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white, // Change text color to white for visibility
+              ),
+            ),
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
 }
+
+}
+
