@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Food2.dart';
+import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -86,7 +87,8 @@ class Food extends StatelessWidget {
                 //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
-                  // Navigate to settings screen or perform action
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SettingsPage()));
                 },
               ),
               ListTile(
