@@ -5,6 +5,7 @@ import 'package:flutter_application_2/Login_Page.dart';
 import 'package:flutter_application_2/Opage.dart';
 import 'package:flutter_application_2/Travel.dart';
 import 'package:flutter_application_2/main.dart';
+import 'package:flutter_application_2/settings.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -79,8 +80,9 @@ class SignUp extends StatelessWidget {
                 //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
-                  // Navigate to settings screen or perform action
-                },
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
               ),
               ListTile(
                 // leading: Icon(Icons.login),
