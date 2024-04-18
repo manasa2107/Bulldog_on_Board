@@ -21,6 +21,8 @@ import 'main.dart';
   }
 
   class HousingScreen extends StatelessWidget {
+  //get title => null;
+  
     @override
     Widget build(BuildContext context) {
       return Scaffold(
@@ -224,7 +226,7 @@ import 'main.dart';
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
-            side: BorderSide(color: const Color.fromRGBO(255, 204, 51, 1.0), width: 2),
+            side: BorderSide(color: Colors.white, width: 2),
           ),
     
           elevation: 4,
@@ -298,5 +300,3 @@ import 'main.dart';
         );
       }
     }
-
-
