@@ -75,6 +75,9 @@ flutter:
     - lib/assets/DTA.jpg
     - lib/assets/Lyft.png
     - lib/assets/restaurants.jpg
+    - lib/assets/Travel.jpg
+    - lib/assets/Food.jpg
+    - lib/assets/Otherinfo.jpg
 
 
     
