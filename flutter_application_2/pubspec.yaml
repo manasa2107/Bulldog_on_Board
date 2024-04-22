@@ -68,7 +68,7 @@ flutter:
   assets:
     - lib/assets/BullDog.jpg
     - lib/assets/Housing.jpg
-    - lib/assets/groceries.png
+    - lib/assets/groceries.jpg
     - lib/assets/Campusmap.jpg
     - lib/assets/TravelDuluth.jpg
     - lib/assets/TravelOut.jpg
