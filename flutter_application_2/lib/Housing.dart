@@ -31,7 +31,7 @@ class HousingScreen extends StatelessWidget {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: Icon(Icons.menu, color: Colors.yellow),
+              icon: Icon(Icons.menu, size:30, color: Colors.yellow),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
