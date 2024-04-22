@@ -128,7 +128,7 @@ class PrivacyPage extends StatelessWidget {
                       BorderRadius.circular(10), // Optional: rounded corners
                 ),
                 child: Text(
-                  'Your privacy is important to us. Bulldog on Board ("we," "us," "our") is committed to protecting your privacy while you use our app. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application. Please take some time to read through it carefully.',
+                  'Your privacy is important to us. Bulldog on Board ("we," "us," "our") is committed to protecting your privacy while you use our app. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application.',
                   textAlign:
                       TextAlign.center, // Center the text inside the container
                   style: TextStyle(
