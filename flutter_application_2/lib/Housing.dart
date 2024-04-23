@@ -21,7 +21,6 @@ class Housing extends StatelessWidget {
 }
 
 class HousingScreen extends StatelessWidget {
-  //get title => null;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +56,6 @@ class HousingScreen extends StatelessWidget {
             icon: Icon(Icons.home), // House icon
             iconSize: 35,
             onPressed: () {
-              // Add functionality for the house icon
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => MyApp()),
@@ -67,7 +65,6 @@ class HousingScreen extends StatelessWidget {
                 const Color.fromRGBO(255, 204, 51, 1.0), // Set color to yellow
           ),
         ],
-        //    backgroundColor: Color.fromARGB(237, 152, 3, 3),
       ),
       drawer: Drawer(
         child: ListView(
@@ -86,14 +83,11 @@ class HousingScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              //leading: Icon(Icons.account_circle),
               title: Text('Profile'),
               onTap: () {
-                // Navigate to signup screen or perform action
               },
             ),
             ListTile(
-              //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
                 Navigator.push(context,
@@ -101,10 +95,8 @@ class HousingScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              // leading: Icon(Icons.login),
               title: Text('Signout'),
               onTap: () {
-                // Navigate to login screen or perform action
               },
             ),
           ],
@@ -174,7 +166,6 @@ class HousingScreen extends StatelessWidget {
                     size: 45,
                     color: Colors.black), // Customize size and color here
                 onPressed: () {
-                  // Handle sign up action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Housing()),
@@ -190,7 +181,6 @@ class HousingScreen extends StatelessWidget {
                     size: 45,
                     color: Colors.black), // Customize size and color here
                 onPressed: () {
-                  // Handle login action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Food()),
@@ -206,7 +196,6 @@ class HousingScreen extends StatelessWidget {
                     size: 45,
                     color: Colors.black), // Customize size and color here
                 onPressed: () {
-                  // Handle contact us action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Travel()),
@@ -222,7 +211,6 @@ class HousingScreen extends StatelessWidget {
                     size: 45,
                     color: Colors.black), // Customize size and color here
                 onPressed: () {
-                  // Handle settings action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Opage()),
