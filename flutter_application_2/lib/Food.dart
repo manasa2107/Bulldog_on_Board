@@ -4,7 +4,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Travel1.dart';
@@ -49,7 +48,6 @@ class Food extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp()),
@@ -77,14 +75,11 @@ class Food extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                   Navigator.push(context,
@@ -92,10 +87,8 @@ class Food extends StatelessWidget {
                 },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -114,7 +107,6 @@ class Food extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        //fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 247, 246, 244)),
                   ),
                   SizedBox(width: 5),
@@ -128,7 +120,6 @@ class Food extends StatelessWidget {
                   padding: EdgeInsets.all(10.0),
                   child: Center(
                     child: Container(
-                      //  width: 370,
                       child: GridView.count(
                         crossAxisCount: 1, // 2 columns
                         childAspectRatio: 1.7,
@@ -141,7 +132,6 @@ class Food extends StatelessWidget {
                                   'https://health-services.d.umn.edu/appointments/health-insurance-information',
                               type: 'DartPage',
                               image: 'lib/assets/groceries.png'),
-                          // backgroundImage: AssetImage('assets/groceries.jpg')), // Added image background
                           GridItem("Best restaurants near me",
                               url:
                                   'https://isss.umn.edu/new-students/requirements/myisss',
@@ -170,7 +160,6 @@ class Food extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle sign up action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Housing()),
@@ -187,7 +176,6 @@ class Food extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle login action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Food()),
@@ -204,7 +192,6 @@ class Food extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle contact us action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Travel()),
@@ -221,7 +208,6 @@ class Food extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle settings action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Opage()),
@@ -250,7 +236,6 @@ class GridItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (type == "DartPage") {
-          // Navigate to different dart pages based on item type
           if (title == "Where to find Groceries Nearby") {
             Navigator.push(
               context,
@@ -291,7 +276,6 @@ class GridItem extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    // color: title == "Campus Map" ? Colors.white : Colors.black, // Change text color based on title
                     color: const Color.fromRGBO(255, 204, 51, 1.0),
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
