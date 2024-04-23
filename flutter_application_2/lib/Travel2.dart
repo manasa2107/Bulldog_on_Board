@@ -5,10 +5,8 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
-// import 'main.dart';
 import 'Opage.dart';
 import 'Housing.dart';
 import 'Travel.dart';
@@ -47,7 +45,6 @@ class InternationalTravelPage extends StatelessWidget {
                 icon: Icon(Icons.home), // House icon
                 iconSize: 35,
                 onPressed: () {
-                  // Add functionality for the house icon
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyApp()),
@@ -76,14 +73,11 @@ class InternationalTravelPage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                 Navigator.push(context,
@@ -91,10 +85,8 @@ class InternationalTravelPage extends StatelessWidget {
               },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -119,7 +111,6 @@ class InternationalTravelPage extends StatelessWidget {
                   Icon(Icons.directions_bus, color: Colors.white, size: 30),
                 ],
               ),
-              //  SizedBox(height: 40),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(10.0),
@@ -153,7 +144,6 @@ class InternationalTravelPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Apply tilt to the airplane image
                       Transform.rotate(
                         angle: 45 * 3.1415927 / 180, // 45 degrees in radians
                         child: RotationTransition(
@@ -237,10 +227,8 @@ class InternationalTravelPage extends StatelessWidget {
 
 class GridItem extends StatelessWidget {
   final String title;
-  // final double fontSize;
   final String url;
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
   GridItem(this.title, {required this.url, Icon? icon});
 
   @override
@@ -254,7 +242,6 @@ class GridItem extends StatelessWidget {
         );
       },
       child: SizedBox(
-        // height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
           color: Colors.white,
