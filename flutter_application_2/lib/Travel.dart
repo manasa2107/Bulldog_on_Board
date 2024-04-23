@@ -5,7 +5,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Travel1.dart';
@@ -50,7 +49,6 @@ class Travel extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => MyApp()),
@@ -78,14 +76,11 @@ class Travel extends StatelessWidget {
               ),
             ),
             ListTile(
-              //leading: Icon(Icons.account_circle),
               title: Text('Profile'),
               onTap: () {
-                // Navigate to signup screen or perform action
               },
             ),
              ListTile(
-              //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
                 Navigator.push(context,
@@ -93,10 +88,8 @@ class Travel extends StatelessWidget {
               },
             ),
             ListTile(
-             // leading: Icon(Icons.login),
               title: Text('Signout'),
               onTap: () {
-                // Navigate to login screen or perform action
               },
             ),
           ],
@@ -150,7 +143,6 @@ class Travel extends StatelessWidget {
         child: IconButton(
           icon: Icon(Icons.apartment, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
-            // Handle sign up action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Housing()),
@@ -163,7 +155,6 @@ class Travel extends StatelessWidget {
         child: IconButton(
           icon: Icon(Icons.fastfood, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
-            // Handle login action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Food()),
@@ -176,7 +167,6 @@ class Travel extends StatelessWidget {
         child: IconButton(
           icon: Icon(Icons.directions_bus, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
-            // Handle contact us action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Travel()),
@@ -190,7 +180,6 @@ class Travel extends StatelessWidget {
         child: IconButton(
           icon: Icon(Icons.info, size: 45, color: Colors.black),  // Customize size and color here
           onPressed: () {
-            // Handle settings action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Opage()),
@@ -218,7 +207,6 @@ class GridItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (type == "DartPage") {
-          // Navigate to different dart pages based on item type
           if (title == "Travel in Duluth") {
             Navigator.push(
               context,
@@ -238,7 +226,6 @@ class GridItem extends StatelessWidget {
         }
       },
       child: SizedBox(
-       // height: 100,
         child: Card(
           elevation: 10,
           color: Colors.white,
@@ -263,7 +250,6 @@ class GridItem extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                   // color: title == "Campus Map" ? Colors.white : Colors.black, // Change text color based on title
                    color:const Color.fromRGBO(255, 204, 51, 1.0),
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
