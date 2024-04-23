@@ -4,7 +4,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Opage.dart';
@@ -45,7 +44,6 @@ class FindGroceries extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp()),
@@ -74,14 +72,11 @@ class FindGroceries extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                   Navigator.push(context,
@@ -89,10 +84,8 @@ class FindGroceries extends StatelessWidget {
                 },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -114,7 +107,6 @@ class FindGroceries extends StatelessWidget {
                         // fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 241, 241, 238)),
                   ),
-                  // Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                 ],
               ),
               SizedBox(
@@ -131,11 +123,6 @@ class FindGroceries extends StatelessWidget {
                           "These grocery shopping sites in Duluth streamline shopping with efficient online ordering and convenient pickup or delivery options.",
                           url: 'https://iss.d.umn.edu/immigration/travel-info',
                           type: 'No redirection'),
-                      //GridItem("International Travel", url:'https://isss.umn.edu/new-students/requirements/myisss'),
-                      //GridItem("Campus Map", url:'https://maps.umn.edu/Duluth_Campusmap/'),
-                      // GridItem("Finances", url:'https://iss.d.umn.edu/financial-information'),
-                      // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                      // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
                     ],
                   ),
                 ),
@@ -166,8 +153,6 @@ class FindGroceries extends StatelessWidget {
                           url:
                               'https://www.cub.com/sm/pickup/rsid/1612?gad_source=1&gclid=CjwKCAjw5ImwBhBtEiwAFHDZx_QuvhTJKJBCgwh-vU9_w-gy59dpI88d1AwIdAoZyVnOA122s6oJUBoCvngQAvD_BwE',
                           type: 'redirection'),
-                      // GridItem("On campus jobs", url:'https://hr.d.umn.edu/working-umd/student-employment-resources'),
-                      // GridItem("Scholarships", url:'https://admissions.d.umn.edu/costs-aid/scholarships'),
                     ],
                   ),
                 ),
@@ -189,7 +174,6 @@ class FindGroceries extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle sign up action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Housing()),
@@ -206,7 +190,6 @@ class FindGroceries extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle login action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Food()),
@@ -223,7 +206,6 @@ class FindGroceries extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle contact us action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Travel()),
@@ -240,7 +222,6 @@ class FindGroceries extends StatelessWidget {
                       color: Color.fromARGB(
                           255, 10, 10, 10)), // Customize size and color here
                   onPressed: () {
-                    // Handle settings action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Opage()),
@@ -258,12 +239,10 @@ class FindGroceries extends StatelessWidget {
 
 class GridItem extends StatelessWidget {
   final String title;
-  // final double fontSize;
   final String url;
 
   final String type;
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
   GridItem(this.title, {required this.url, required this.type});
 
   @override
