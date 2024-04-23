@@ -5,7 +5,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Opage.dart';
@@ -47,13 +46,11 @@ class ContactUs extends StatelessWidget {
               iconSize: 35,
               color:const Color.fromRGBO(255, 204, 51, 1.0),
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
-             // color: Colors.yellow, // Set color to yellow
             ),
           ],
           backgroundColor: Color.fromARGB(237, 152, 3, 3),
@@ -75,14 +72,11 @@ class ContactUs extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                    Navigator.push(context,
@@ -90,10 +84,8 @@ class ContactUs extends StatelessWidget {
                 },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -137,11 +129,11 @@ class ContactUs extends StatelessWidget {
                               url: 'https://in.linkedin.com/in/stanley-sujith-nelavala-5812381a9'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
+                        Icon(Icons.email, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 35,color: Colors.white),
                       ],
                     ),
                     Row(
@@ -155,13 +147,11 @@ class ContactUs extends StatelessWidget {
                                   'https://www.linkedin.com/in/boyapati-yagna-manasa-a9456710a'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
-                        // SizedBox(width: 10), // Space between icons
-                        // Icon(Icons.linked_camera, size: 30),
+                        Icon(Icons.email, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 35,color: Colors.white),
                       ],
                     ),
                     Row(
@@ -175,13 +165,11 @@ class ContactUs extends StatelessWidget {
                                   'https://in.linkedin.com/in/harika-yarlagadda-132243225?trk=people-guest_people_search-card'),
                         ),
                         SizedBox(width: 20), // Space between name and icons
-                        Icon(Icons.email, size: 35),
-                        // SizedBox(width: 10), // Space between icons
-                        // Icon(Icons.linked_camera, size: 30),
+                        Icon(Icons.email, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.facebook, size: 35),
+                        Icon(Icons.facebook, size: 35,color: Colors.white),
                         SizedBox(width: 10), // Space between icons
-                        Icon(Icons.phone, size: 35),
+                        Icon(Icons.phone, size: 35,color: Colors.white),
                       ],
                     ),
                   ],
@@ -203,7 +191,6 @@ class ContactUs extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle sign up action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Housing()),
@@ -219,7 +206,6 @@ class ContactUs extends StatelessWidget {
                       size: 40,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle login action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Food()),
@@ -235,7 +221,6 @@ class ContactUs extends StatelessWidget {
                       size: 40,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle contact us action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Travel()),
@@ -251,7 +236,6 @@ class ContactUs extends StatelessWidget {
                       size: 40,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle settings action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Opage()),
@@ -269,10 +253,8 @@ class ContactUs extends StatelessWidget {
 
 class GridItem extends StatelessWidget {
   final String title;
-  // final double fontSize;
   final String url;
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
   GridItem(this.title, {required this.url});
 
   @override
