@@ -5,7 +5,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Opage.dart';
@@ -46,7 +45,6 @@ class TravelInDuluthPage extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp()),
@@ -75,14 +73,11 @@ class TravelInDuluthPage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                 Navigator.push(context,
@@ -90,10 +85,8 @@ class TravelInDuluthPage extends StatelessWidget {
               },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -139,16 +132,13 @@ class TravelInDuluthPage extends StatelessWidget {
                   child: GridView.count(
                     crossAxisCount: 2, // 2 columns
                     childAspectRatio: 1.05,
-                    // mainAxisSpacing: 10.0, // Add vertical spacing between grid items
                     crossAxisSpacing: 20.0,
                     children: <Widget>[
                       GridItem(
-                        //  title: "DTA",
                         backgroundImage: 'lib/assets/DTA.jpg',
                         url: 'https://www.duluthtransit.com/',
                       ),
                       GridItem(
-                        // title: "Lyft",
                         backgroundImage: 'lib/assets/Lyft.png',
                         url: 'https://www.lyft.com/rider/cities/duluth-mn',
                       ),
@@ -172,7 +162,6 @@ class TravelInDuluthPage extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle sign up action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Housing()),
@@ -188,7 +177,6 @@ class TravelInDuluthPage extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle login action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Food()),
@@ -204,7 +192,6 @@ class TravelInDuluthPage extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle contact us action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Travel()),
@@ -220,7 +207,6 @@ class TravelInDuluthPage extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle settings action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Opage()),
@@ -254,7 +240,6 @@ class GridItem extends StatelessWidget {
         );
       },
       child: SizedBox(
-        // height: 100, // Adjust the height as needed
         child: Card(
           elevation: 3,
           color: Colors.white,
@@ -304,7 +289,6 @@ class WebViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // title: Text(title),
           ),
       body: WebView(
         initialUrl: url,
