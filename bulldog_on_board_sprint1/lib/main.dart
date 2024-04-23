@@ -1,125 +1,291 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/ContactUs.dart';
+import 'package:flutter_application_2/settings.dart';
+import 'package:flutter_application_2/SignUp.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'Opage.dart';
+import 'Housing.dart';
+import 'Travel.dart';
+import 'Login_Page.dart';
+import 'Food.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Bulldog on Board',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.menu, size: 30),
+              color: Color.fromRGBO(152, 3, 3, 0.929),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+        title: Container(
+          padding: EdgeInsets.all(5),
+          child: Text(
+            ' Bulldog on Board ',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: const Color.fromRGBO(152, 3, 3, 0.922),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+          ),
+        ),
+        centerTitle: true,
+        elevation: 0, // Remove elevation of AppBar
+        backgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
+      ),
+      body: ListView(
+        children: [
+          SizedBox(height: 15),
+          Center(
+            child: Column(
+              children: [
+                Image.asset(
+                  'lib/assets/BullDog.jpg',
+                  height: 205,
+                  width: 420,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 5),
+                Text('Explore the contents within !',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromRGBO(152, 3, 3, 0.922))),
+              ],
+            ),
+          ),
+          SizedBox(height: 3),
+          GridView.count(
+            shrinkWrap: true,
+            crossAxisCount: 2,
+            childAspectRatio: 0.9,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              _buildGridItem(
+                context,
+                'Housing',
+                Icons.apartment,
+                Housing(),
+                'lib/assets/Housing.jpg', // Path to housing background image
+                10.0, // Border radius for housing item
+                0.3, // Opacity for housing item
+              ),
+              _buildGridItem(
+                context,
+                'Food',
+                Icons.fastfood,
+                Food(),
+                'lib/assets/Food.jpg', // Path to food background image
+                12.0, // Border radius for food item
+                0.5, // Opacity for food item
+              ),
+              _buildGridItem(
+                context,
+                'Travel',
+                Icons.directions_bus,
+                Travel(),
+                'lib/assets/Travel.jpg', // Path to travel background image
+                12.0, // Border radius for travel item
+                0.6, // Opacity for travel item
+              ),
+              _buildGridItem(
+                context,
+                'Other Information',
+                Icons.info,
+                Opage(),
+                'lib/assets/Otherinfo.jpg', // Path to other info background image
+                12.0, // Border radius for other info item
+                0.6, // Opacity for other info item
+              ),
+            ],
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(152, 3, 3, 0.929),
+              ),
+              child: Text(
+                'Bulldog on Board',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Profile'),
+              onTap: () {
+              },
+            ),
+            ListTile(
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
+            ),
+            ListTile(
+              title: Text('Signout'),
+              onTap: () {
+              },
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomAppBar(
+        color: Color.fromRGBO(152, 3, 3, 0.929),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.account_circle,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 204, 51, 1.0)), // Customize size and color here
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUp()),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.login,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 204, 51, 1.0)), // Customize size and color here
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.contact_mail,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 204, 51, 1.0)), // Customize size and color here
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ContactUs()),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 10, right: 10), // Adjust left and right margins here
+              child: IconButton(
+                icon: Icon(Icons.settings,
+                    size: 40,
+                    color: const Color.fromRGBO(
+                        255, 204, 51, 1.0)), // Customize size and color here
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildGridItem(
+    BuildContext context,
+    String title,
+    IconData icon,
+    Widget page,
+    String backgroundImage,
+    double borderRadius,
+    double opacity,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
+      },
+      child: Card(
+        elevation: 4,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius),
+            image: DecorationImage(
+              image: AssetImage(backgroundImage),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(opacity),
+                BlendMode.darken,
+              ),
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 55, color: Colors.white),
+              SizedBox(height: 10),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 20,
+                  color:
+                      Colors.white, // Change text color to white for visibility
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
