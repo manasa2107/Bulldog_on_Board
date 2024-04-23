@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/ContactUs.dart';
-import 'package:flutter_application_2/Settings.dart';
+import 'package:flutter_application_2/settings.dart';
 import 'package:flutter_application_2/SignUp.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Opage.dart';
@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
-        // scaffoldBackgroundColor: Color.fromARGB(220, 242, 164, 46),
       ),
       home: MainScreen(),
     );
@@ -57,7 +56,6 @@ class MainScreen extends StatelessWidget {
             ),
           ),
         ),
-        //title: Text('Bulldog on Board'),
         centerTitle: true,
         elevation: 0, // Remove elevation of AppBar
         backgroundColor: const Color.fromRGBO(255, 204, 51, 1.0),
@@ -87,7 +85,6 @@ class MainScreen extends StatelessWidget {
           GridView.count(
             shrinkWrap: true,
             crossAxisCount: 2,
-            // childAspectRatio: 0.95,
             childAspectRatio: 0.9,
             physics: NeverScrollableScrollPhysics(),
             children: [
@@ -148,14 +145,11 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             ListTile(
-              //leading: Icon(Icons.account_circle),
               title: Text('Profile'),
               onTap: () {
-                // Navigate to signup screen or perform action
               },
             ),
             ListTile(
-              //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
                 Navigator.push(context,
@@ -163,10 +157,8 @@ class MainScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              // leading: Icon(Icons.login),
               title: Text('Signout'),
               onTap: () {
-                // Navigate to login screen or perform action
               },
             ),
           ],
@@ -186,7 +178,6 @@ class MainScreen extends StatelessWidget {
                     color: const Color.fromRGBO(
                         255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
-                  // Handle sign up action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SignUp()),
@@ -203,7 +194,6 @@ class MainScreen extends StatelessWidget {
                     color: const Color.fromRGBO(
                         255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
-                  // Handle login action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Login()),
@@ -220,7 +210,6 @@ class MainScreen extends StatelessWidget {
                     color: const Color.fromRGBO(
                         255, 204, 51, 1.0)), // Customize size and color here
                 onPressed: () {
-                  // Handle contact us action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ContactUs()),
@@ -261,7 +250,6 @@ class MainScreen extends StatelessWidget {
   ) {
     return GestureDetector(
       onTap: () {
-        // Handle item tap
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => page),
