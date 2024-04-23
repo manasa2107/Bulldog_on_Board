@@ -41,7 +41,6 @@ class Login extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp()),
@@ -69,14 +68,11 @@ class Login extends StatelessWidget {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.account_circle),
                 title: Text('Profile'),
                 onTap: () {
-                  // Navigate to signup screen or perform action
                 },
               ),
               ListTile(
-                //leading: Icon(Icons.settings),
                 title: Text('Settings'),
                 onTap: () {
                   Navigator.push(context,
@@ -84,10 +80,8 @@ class Login extends StatelessWidget {
                 },
               ),
               ListTile(
-                // leading: Icon(Icons.login),
                 title: Text('Signout'),
                 onTap: () {
-                  // Navigate to login screen or perform action
                 },
               ),
             ],
@@ -135,7 +129,6 @@ class Login extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       Column(
-                        //crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
@@ -162,7 +155,6 @@ class Login extends StatelessWidget {
                       ),
                       SizedBox(height: 10.0),
                       Column(
-                        //crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
@@ -201,7 +193,6 @@ class Login extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              // Navigate to Login page when "Login" is clicked
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -233,7 +224,6 @@ class Login extends StatelessWidget {
                       SizedBox(height: 20.0),
                       ElevatedButton(
                         onPressed: () {
-                          // Implement login functionality
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
@@ -267,7 +257,6 @@ class Login extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle sign up action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Housing()),
@@ -283,7 +272,6 @@ class Login extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle login action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Food()),
@@ -299,7 +287,6 @@ class Login extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle contact us action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Travel()),
@@ -315,7 +302,6 @@ class Login extends StatelessWidget {
                       size: 45,
                       color: Colors.black), // Customize size and color here
                   onPressed: () {
-                    // Handle settings action
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Opage()),
