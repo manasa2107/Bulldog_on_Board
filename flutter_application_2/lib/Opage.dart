@@ -4,7 +4,6 @@ import 'package:flutter_application_2/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'main.dart';
 import 'Travel.dart';
@@ -45,7 +44,6 @@ class Opage extends StatelessWidget {
               icon: Icon(Icons.home), // House icon
               iconSize: 35,
               onPressed: () {
-                // Add functionality for the house icon
                 Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => MyApp()),
@@ -73,14 +71,11 @@ class Opage extends StatelessWidget {
               ),
             ),
             ListTile(
-              //leading: Icon(Icons.account_circle),
               title: Text('Profile'),
               onTap: () {
-                // Navigate to signup screen or perform action
               },
             ),
              ListTile(
-              //leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
                 Navigator.push(context,
@@ -88,10 +83,8 @@ class Opage extends StatelessWidget {
               },
             ),
             ListTile(
-             // leading: Icon(Icons.login),
               title: Text('Signout'),
               onTap: () {
-                // Navigate to login screen or perform action
               },
             ),
           ],
@@ -110,10 +103,8 @@ class Opage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 24,
                          fontWeight: FontWeight.bold,
-                       // color: Color.fromARGB(255, 250, 233, 83)),
                        color:Colors.white),
                   ),
-                 // Icon(Icons.info, color: Color.fromARGB(255, 250, 233, 77)),
                      Icon(Icons.info, color: Colors.white, size:27),
                 ],
               ),
@@ -149,9 +140,7 @@ class Opage extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
         icon: Icon(Icons.apartment, size: 45, color:Colors.black), 
-       //   icon: Icon(Icons.apartment, size: 45, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
-            // Handle sign up action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Housing()),
@@ -162,10 +151,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          // icon: Icon(Icons.fastfood, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           icon: Icon(Icons.fastfood, size: 45, color:Colors.black), 
           onPressed: () {
-            // Handle login action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Food()),
@@ -176,10 +163,8 @@ class Opage extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
-          // icon: Icon(Icons.directions_bus, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
            icon: Icon(Icons.directions_bus, size: 45, color:Colors.black), 
           onPressed: () {
-            // Handle contact us action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Travel()),
@@ -192,9 +177,7 @@ class Opage extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, right: 10), // Adjust left and right margins here
         child: IconButton(
       icon: Icon(Icons.info, size: 45, color:Colors.black), 
-         // icon: Icon(Icons.info, size: 40, color: const Color.fromRGBO(152, 3, 3, 0.929)),  // Customize size and color here
           onPressed: () {
-            // Handle settings action
             Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Opage()),
@@ -212,10 +195,8 @@ class Opage extends StatelessWidget {
 
 class GridItem extends StatelessWidget {
   final String title;
-  // final double fontSize;
   final String url;
 
-  // GridItem(this.title, {required this.fontSize, required this.url});
   GridItem(this.title, {required this.url});
 
 
@@ -233,7 +214,6 @@ class GridItem extends StatelessWidget {
         child: Card(
           elevation: 3,
            color: Colors.white,
-         // color: Colors.yellow,
 
           child: Center(
             child: Padding(
@@ -242,7 +222,6 @@ class GridItem extends StatelessWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                 // color: const Color.fromRGBO(152, 3, 3, 0.929),
                  color:Colors.black,
 
                   fontSize: 20,
