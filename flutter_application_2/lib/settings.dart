@@ -6,7 +6,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  double _fontSize = 16.0;
+  double _fontSize = 32.0; // Increased font size
   bool _isDarkTheme = false;
   bool _isEmailNotification = true;
 
@@ -16,11 +16,10 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         title: Text(
           'Settings',
-          style: TextStyle(fontSize: 24, color: Colors.white),
+          style: TextStyle(fontSize: 32, color: Colors.white), // Increased font size
         ),
         backgroundColor: Color.fromARGB(237, 152, 3, 3),
       ),
-      // Change the backgroundColor of the Scaffold
       backgroundColor: const Color.fromARGB(255, 255, 204, 51),
       body: ListView(
         children: [
@@ -31,26 +30,34 @@ class _SettingsPageState extends State<SettingsPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Font Size'),
+                    Text(
+                      'Font Size',
+                      style: TextStyle(fontSize: _fontSize), // Dynamic font size
+                    ),
                     Slider(
                       value: _fontSize,
                       min: 12.0,
-                      max: 24.0,
-                      divisions: 4,
+                      max: 32.0, // Increased max font size
+                      divisions: 8,
                       onChanged: (value) => setState(() => _fontSize = value),
-                      // Change the color of the Slider
                       activeColor: const Color.fromARGB(237, 152, 3, 3),
                     ),
                   ],
                 ),
                 SwitchListTile(
-                  title: Text('Dark Theme'),
+                  title: Text(
+                    'Dark Theme',
+                    style: TextStyle(fontSize: _fontSize), // Dynamic font size
+                  ),
                   value: _isDarkTheme,
                   onChanged: (value) => setState(() => _isDarkTheme = value),
                   activeTrackColor: const Color.fromARGB(237, 152, 3, 3),
                 ),
                 SwitchListTile(
-                  title: Text('Email Notifications'),
+                  title: Text(
+                    'Email Notifications',
+                    style: TextStyle(fontSize: _fontSize), // Dynamic font size
+                  ),
                   value: _isEmailNotification,
                   onChanged: (value) =>
                       setState(() => _isEmailNotification = value),
@@ -70,14 +77,13 @@ class _SettingsPageState extends State<SettingsPage> {
                       },
                       child: Text(
                         'Privacy Policy',
-                        // Change the color of the TextButton
                         style: TextStyle(
-                            color: const Color.fromARGB(237, 152, 3, 3)),
+                            color: const Color.fromARGB(237, 152, 3, 3),
+                            fontSize: _fontSize), // Dynamic font size
                       ),
                     ),
                     TextButton(
                       onPressed: () {
-                        // Handle About link navigation
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => AboutPage()),
@@ -85,9 +91,9 @@ class _SettingsPageState extends State<SettingsPage> {
                       },
                       child: Text(
                         'About',
-                        // Change the color of the TextButton
                         style: TextStyle(
-                            color: const Color.fromARGB(237, 152, 3, 3)),
+                            color: const Color.fromARGB(237, 152, 3, 3),
+                            fontSize: _fontSize), // Dynamic font size
                       ),
                     ),
                   ],
@@ -100,6 +106,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
+
 
 class PrivacyPage extends StatelessWidget {
   @override
